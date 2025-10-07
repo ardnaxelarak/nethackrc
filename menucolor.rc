@@ -68,6 +68,10 @@ MENUCOLOR="wand (of|called) cancellation"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) tricks"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) holding"={{ bag_kaboom }}
 
+## Overview
+MENUCOLOR="^\s*Level.*rust trap"=bright blue
+MENUCOLOR="^\s*Level.*You are here"=green
+
 ## Branches
 {% set branch_header = "white&inverse" %}
 {% set branch_transition = "yellow" %}
