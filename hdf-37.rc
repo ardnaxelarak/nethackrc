@@ -1,0 +1,14 @@
+{% include "main.rc" %}
+
+{% include "unicode_symbols.rc" %}
+
+{% include "color_glyphs.rc" %}
+
+OPTIONS=!tutorial,!safe_wait,!tips
+OPTIONS=showdamage
+OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs
+OPTIONS=paranoid_confirmation:pray Remove trap swim
+
+BIND=O:optionsfull
+
+{% include "pergame.rc" %}

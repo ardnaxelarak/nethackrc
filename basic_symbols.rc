@@ -1,0 +1,5 @@
+SYMBOLS=S_magic_portal:\x38
+SYMBOLS=S_rust_trap:\x38
+SYMBOLS=S_water:\x7E
+SYMBOLS=S_pool:\x7E
+SYMBOLS=S_lava:\x7E

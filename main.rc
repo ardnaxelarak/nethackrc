@@ -1,0 +1,57 @@
+# junethack karafruit
+
+OPTIONS=symset:Enhanced1,roguesymset:plain
+
+OPTIONS=!force_invmenu
+OPTIONS=suppress_alert:3.3.1
+OPTIONS=map_mode:tiles,scroll_margin:10
+
+OPTIONS=font_message:Consolas,font_size_message:14,align_message:top
+OPTIONS=font_menu:Consolas,font_size_menu:14
+OPTIONS=font_text:Courier New,font_size_text:14
+OPTIONS=font_status:Courier New,font_size_status:14
+OPTIONS=hilite_pet,hilite_pile,!toptenwin
+#OPTIONS=!splash_screen,player_selection:prompts
+
+AUTOCOMPLETE=twoweapon
+
+{% include "menucolor.rc" %}
+
+{% include "statusbar.rc" %}
+
+{% include "msgtypes.rc" %}
+
+OPTIONS=dogname:Athena
+OPTIONS=catname:Moldorm
+OPTIONS=horsename:Horse
+OPTIONS=fruitname:word
+
+OPTIONS=autopickup,pickup_types:$
+autopickup_exception=">.*iron chain.*"
+autopickup_exception=">.*heavy iron ball.*"
+
+OPTIONS=scores:10 top/2 around/own
+
+OPTIONS=time,showexp,number_pad:2,lit_corridor
+
+OPTIONS=msg_window:reversed,sortloot:full
+OPTIONS=autoquiver
+# OPTIONS=invweight,showdmg,showweight
+OPTIONS=!cmdassist
+OPTIONS=boulder:0,travel
+OPTIONS=disclose:yi ya nv ng yc no
+OPTIONS=altmeta
+OPTIONS=!autodig
+OPTIONS=statuslines:3
+OPTIONS=pickup_burden=B
+OPTIONS=paranoid_confirmation:p t A s
+# OPTIONS=realtime:p,realtime_format:f
+
+OPTIONS=runmode:teleport
+OPTIONS=quick_farsight
+OPTIONS=whatis_coord:c
+OPTIONS=!implicit_uncursed
+
+BIND=M-m:terrain
+BIND=C:conduct
+BIND=!:annotate

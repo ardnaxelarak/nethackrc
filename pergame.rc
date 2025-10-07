@@ -1,0 +1,4 @@
+{{ "# " if not nobones }}OPTIONS=nobones
+{{ "# " if not nopet }}OPTIONS=nopet
+{{ "# " if not pauper }}OPTIONS=pauper
+{{ "# " if not nudist }}OPTIONS=nudist

@@ -1,0 +1,83 @@
+OPTIONS=menucolors,menu_objsyms
+
+### Item Status (BUC/worn)
+MENUCOLOR=""=white
+MENUCOLOR="gold pieces?"=yellow
+
+MENUCOLOR="[Bb]lessed"=green
+MENUCOLOR="[Hh]oly"=green
+
+MENUCOLOR="[Cc]ursed"=red
+MENUCOLOR="[Uu]nholy"=red
+
+MENUCOLOR="[Uu]ncursed"=gray
+
+MENUCOLOR=".*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=white&inverse
+MENUCOLOR="[Cc]ursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=red&inverse
+MENUCOLOR="[Uu]ncursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=gray&inverse
+MENUCOLOR="[Bb]lessed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=green&inverse
+
+### Items
+## Gray Stones
+MENUCOLOR="luckstone|called luck"=bright blue
+MENUCOLOR="touchstone|called touch"=bright blue
+MENUCOLOR=" [Cc]ursed luckstone|[Cc]usred.*called luck"=red
+MENUCOLOR="loadstone|called load"=red
+MENUCOLOR="gray stone"=red
+
+MENUCOLOR="doppelganger corpse"=red
+MENUCOLOR="were.* corpse"=red
+
+## Gemstones
+MENUCOLOR="dilithium crystal"=yellow
+MENUCOLOR="diamond"=yellow
+MENUCOLOR="rub(y|ies)"=yellow
+MENUCOLOR="jacinth stone"=yellow
+MENUCOLOR="sapphire"=yellow
+MENUCOLOR="black opal"=yellow
+MENUCOLOR="emerald"=yellow
+MENUCOLOR="turquoise stone"=yellow
+MENUCOLOR="citrine"=yellow
+MENUCOLOR="aquamarine"=yellow
+MENUCOLOR="amber stone"=yellow
+MENUCOLOR="topaz stone"=yellow
+MENUCOLOR="jet stone"=yellow
+MENUCOLOR="opals"=yellow
+MENUCOLOR="chrysoberyl"=yellow
+MENUCOLOR="garnet stone"=yellow
+MENUCOLOR="amethyst"=yellow
+MENUCOLOR="jasper stone"=yellow
+MENUCOLOR="fluorite"=yellow
+MENUCOLOR="jade stone"=yellow
+MENUCOLOR="obsidian"=yellow
+MENUCOLOR="agate stone"=yellow
+
+MENUCOLOR="Amulet of Yendor named"=blue
+MENUCOLOR="Amulet of Yendor named.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=blue&inverse
+
+MENUCOLOR="wand (of|called) cancellation"=cyan
+MENUCOLOR="bag (of|called) tricks"=cyan
+
+## Branches
+MENUCOLOR="The Dungeons of Doom:"=bright blue&reverse
+MENUCOLOR="The Gnomish Mines:"=bright blue&reverse
+MENUCOLOR="Sokoban:"=bright blue&reverse
+MENUCOLOR="The Quest:"=bright blue&reverse
+MENUCOLOR="Fort Ludios:"=bright blue&reverse
+MENUCOLOR="Gehennom:"=bright blue&reverse
+MENUCOLOR="Vlad.s Tower:"=bright blue&reverse
+MENUCOLOR="The Elemental Planes:"=bright blue&reverse
+MENUCOLOR="The Tutorial:"=bright blue&reverse
+MENUCOLOR="Portal to The Quest"=bright blue&underline
+MENUCOLOR="Portal to Fort Ludios"=bright blue&underline
+
+## |TNNT|
+MENUCOLOR="DevTeam Office:"=bright blue&reverse
+MENUCOLOR="Deathmatch Arena:"=bright blue&reverse
+MENUCOLOR="robotfindskitten:"=bright blue&reverse
+
+## Spells
+MENUCOLOR="100%.*%"=red
+MENUCOLOR="%.*\(gone\)"=orange
+
+MENUCOLOR="implicit_uncursed"=gray

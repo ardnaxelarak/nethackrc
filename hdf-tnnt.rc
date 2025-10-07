@@ -1,0 +1,9 @@
+{% include "main.rc" %}
+
+{% include "basic_symbols.rc" %}
+
+OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs
+OPTIONS=paranoid_confirmation:pray trap A Remove
+OPTIONS=realtime:p,realtime_format:f
+
+{% include "pergame.rc" %}

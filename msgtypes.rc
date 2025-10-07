@@ -1,0 +1,106 @@
+MSGTYPE=hide "Unknown command '.*'."
+
+MSGTYPE=hide "You swap places with .*"
+
+MSGTYPE=hide "attack passes harmlessly through the shade"
+# MSGTYPE=hide "(It|The .*|.*'s ghost) (misses|touches|bites|hits) (it|the .*|.*'s ghost)"
+MSGTYPE=hide "The fire doesn't seem to burn (it|the .*|.*'s ghost)"
+MSGTYPE=hide "(It|The .*|.*'s ghost) is mildly warmed"
+MSGTYPE=hide "(It|The .*|.*'s ghost) is uninjured"
+MSGTYPE=hide "\(I hope you don't mind\.\)"
+MSGTYPE=hide "Most likely all your gold was stolen from this"
+MSGTYPE=hide "is not affected by oxidation"
+
+MSGTYPE=norep "A mysterious force prevents the .* from teleporting"
+
+MSGTYPE=show "magic missile (hits|misses)"
+MSGTYPE=show "spell (hits|misses)"
+MSGTYPE=show "wand (hits|misses)"
+MSGTYPE=show "dagger (hits|misses)"
+MSGTYPE=show "dart (hits|misses)"
+MSGTYPE=show "ray (hits|misses)"
+MSGTYPE=show "death ray"
+MSGTYPE=show "water flow"
+
+## Danger
+MSGTYPE=stop "You are slowing down"
+MSGTYPE=stop "Your limbs are .*"
+MSGTYPE=stop ".* swings itself around you.*"
+MSGTYPE=stop "You find it hard to breathe"
+MSGTYPE=stop "You are turning a little .*"
+MSGTYPE=stop "You feel feverish"
+MSGTYPE=stop "steals? |stole"
+MSGTYPE=stop "The Wizard of Yendor steals .*"
+MSGTYPE=stop "flicks a bullwhip towards your"
+MSGTYPE=stop "wraps around the"
+MSGTYPE=stop "yanks the"
+MSGTYPE=stop "hand spasms"
+MSGTYPE=stop "disintegration"
+MSGTYPE=stop "wields .*Vorpal Blade"
+MSGTYPE=stop "swings .*Vorpal Blade"
+MSGTYPE=stop "zaps .* with wand of teleportation"
+MSGTYPE=stop "You feel a malgnant aura surround you."
+MSGTYPE=stop "(thoroughly|utterly|totally) digest"
+MSGTYPE=stop "(feel sad|have a (peculiarly)? (sad|melancholy) feeling) for a moment"
+MSGTYPE=stop ".* starves"
+MSGTYPE=stop "Run away! Run away!"
+MSGTYPE=stop "Watch out! Bad things can happen on Friday the 13th."
+
+## Draining
+MSGTYPE=stop "Goodbye level .*."        #  Default
+MSGTYPE=stop "Fare thee well level .*." #  Knight
+MSGTYPE=stop "Sayonara level .*."       #  Samurai
+MSGTYPE=stop "Aloha level .*."          #  Tourist
+MSGTYPE=stop "Farvel level .*."         #  Valkyrie
+
+## Good Things
+MSGTYPE=stop "You feel a strange mental acuity"
+MSGTYPE=stop "You feel (especially)? healthy"
+MSGTYPE=stop "You feel hardy"
+MSGTYPE=stop "You feel wide awake"
+MSGTYPE=stop "You feel a momentary chill"
+MSGTYPE=stop "You feel full of hot air"
+MSGTYPE=stop "You feel very firm"
+MSGTYPE=stop "Your health currently feels amplified"
+MSGTYPE=stop "Magic spreads through your body as you digest"
+MSGTYPE=stop "You have a feeling of reconciliation"
+MSGTYPE=stop "You feel more confident"
+MSGTYPE=stop "grows up"
+
+## Vault
+MSGTYPE=stop "You (dream that you )?hear the footsteps of a guard on patrol"
+MSGTYPE=stop "You (dream that you )?hear someone counting"
+
+## Excalibur
+MSGTYPE=stop "From the murky depths, a hand reaches up to bless the sword"
+
+## Amulet of Yendor
+MSGTYPE=stop "Amulet of Yendor named"
+
+MSGTYPE=stop "You don't have anything to eat."
+MSGTYPE=stop "You cannot eat that"
+MSGTYPE=stop "You don't have that object"
+
+MSGTYPE=stop "won't move|still eating"
+MSGTYPE=stop "Closed for inventory"
+
+MSGTYPE=stop "You wrest .*"
+
+MSGTYPE=stop "You feel a strange vibration"
+
+## Gremlin stealing your intrinsic at night
+MSGTYPE=stop "The gremlin chuckles."
+MSGTYPE=stop "You hear laughter."
+MSGTYPE=stop "Some writing vanishes from.*head!"
+MSGTYPE=stop "You feel warmer."
+MSGTYPE=stop "You feel less jumpy."
+MSGTYPE=stop "You feel a little sick!"
+MSGTYPE=stop "Your senses fail!"
+MSGTYPE=stop "You feel cooler."
+MSGTYPE=stop "You feel paranoid."
+MSGTYPE=stop "You thought you saw something!"
+MSGTYPE=stop "You tawt you taw a puttie tat!"
+MSGTYPE=stop "You feel slower."
+MSGTYPE=stop "You feel clumsy."
+MSGTYPE=stop "You feel vulnerable."
+MSGTYPE=stop "You feel less attractive."
