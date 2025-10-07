@@ -1,82 +1,102 @@
 OPTIONS=menucolors,menu_objsyms
 
 ### Item Status (BUC/worn)
-MENUCOLOR=""=white
-MENUCOLOR="gold pieces?"=yellow
+{% set unknown_buc = "white" %}
+{% set cursed = "red" %}
+{% set uncursed = "gray" %}
+{% set blessed = "green" %}
+{% set danger_item = "red" %}
+{% set valuable_item = "yellow" %}
+{% set bag_kaboom = "cyan" %}
 
-MENUCOLOR="[Bb]lessed"=green
-MENUCOLOR="[Hh]oly"=green
+MENUCOLOR=""={{ unknown_buc }}
+MENUCOLOR="gold pieces?"={{ valuable_item }}
 
-MENUCOLOR="[Cc]ursed"=red
-MENUCOLOR="[Uu]nholy"=red
+MENUCOLOR="[Bb]lessed"={{ blessed }}
+MENUCOLOR="[Hh]oly"={{ blessed }}
 
-MENUCOLOR="[Uu]ncursed"=gray
+MENUCOLOR="[Cc]ursed"={{ cursed }}
+MENUCOLOR="[Uu]nholy"={{ cursed }}
 
-MENUCOLOR=".*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=white&inverse
-MENUCOLOR="[Cc]ursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=red&inverse
-MENUCOLOR="[Uu]ncursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=gray&inverse
-MENUCOLOR="[Bb]lessed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=green&inverse
+MENUCOLOR="[Uu]ncursed"={{ uncursed }}
+
+MENUCOLOR=".*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ unknown_buc }}&inverse
+MENUCOLOR="[Cc]ursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ cursed }}&inverse
+MENUCOLOR="[Uu]ncursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ uncursed }}&inverse
+MENUCOLOR="[Bb]lessed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ blessed }}&inverse
 
 ### Items
 ## Gray Stones
 MENUCOLOR="luckstone|called luck"=bright blue
 MENUCOLOR="touchstone|called touch"=bright blue
-MENUCOLOR=" [Cc]ursed luckstone|[Cc]usred.*called luck"=red
-MENUCOLOR="loadstone|called load"=red
-MENUCOLOR="gray stone"=red
+MENUCOLOR=" [Cc]ursed luckstone| [Cc]ursed.*called luck"=red
+MENUCOLOR="loadstone|called load"={{ danger_item }}
+MENUCOLOR="gray stone"={{ danger_item }}
 
-MENUCOLOR="doppelganger corpse"=red
-MENUCOLOR="were.* corpse"=red
+MENUCOLOR="chameleon corpse"={{ danger_item }}
+MENUCOLOR="doppelganger corpse"={{ danger_item }}
+MENUCOLOR="were.* corpse"={{ danger_item }}
 
 ## Gemstones
-MENUCOLOR="dilithium crystal"=yellow
-MENUCOLOR="diamond"=yellow
-MENUCOLOR="rub(y|ies)"=yellow
-MENUCOLOR="jacinth stone"=yellow
-MENUCOLOR="sapphire"=yellow
-MENUCOLOR="black opal"=yellow
-MENUCOLOR="emerald"=yellow
-MENUCOLOR="turquoise stone"=yellow
-MENUCOLOR="citrine"=yellow
-MENUCOLOR="aquamarine"=yellow
-MENUCOLOR="amber stone"=yellow
-MENUCOLOR="topaz stone"=yellow
-MENUCOLOR="jet stone"=yellow
-MENUCOLOR="opals"=yellow
-MENUCOLOR="chrysoberyl"=yellow
-MENUCOLOR="garnet stone"=yellow
-MENUCOLOR="amethyst"=yellow
-MENUCOLOR="jasper stone"=yellow
-MENUCOLOR="fluorite"=yellow
-MENUCOLOR="jade stone"=yellow
-MENUCOLOR="obsidian"=yellow
-MENUCOLOR="agate stone"=yellow
+MENUCOLOR="dilithium crystal"={{ valuable_item }}
+MENUCOLOR="diamonds?$"={{ valuable_item }}
+MENUCOLOR="rub(y|ies)$"={{ valuable_item }}
+MENUCOLOR="jacinth stone"={{ valuable_item }}
+MENUCOLOR="sapphires?$"={{ valuable_item }}
+MENUCOLOR="black opal"={{ valuable_item }}
+MENUCOLOR="emeralds?$"={{ valuable_item }}
+MENUCOLOR="turquoise stone"={{ valuable_item }}
+MENUCOLOR="citrine"={{ valuable_item }}
+MENUCOLOR="aquamarine"={{ valuable_item }}
+MENUCOLOR="amber stone"={{ valuable_item }}
+MENUCOLOR="topaz stone"={{ valuable_item }}
+MENUCOLOR="jet stone"={{ valuable_item }}
+MENUCOLOR="opals?$"={{ valuable_item }}
+MENUCOLOR="chrysoberyl"={{ valuable_item }}
+MENUCOLOR="garnet stone"={{ valuable_item }}
+MENUCOLOR="amethyst"={{ valuable_item }}
+MENUCOLOR="jasper stone"={{ valuable_item }}
+MENUCOLOR="fluorite"={{ valuable_item }}
+MENUCOLOR="jade stone"={{ valuable_item }}
+MENUCOLOR="obsidian stone"={{ valuable_item }}
+MENUCOLOR="agate stone"={{ valuable_item }}
 
-MENUCOLOR="Amulet of Yendor named"=blue
-MENUCOLOR="Amulet of Yendor named.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"=blue&inverse
+MENUCOLOR="Amulet of Yendor named"={{ valuable_item }}
+MENUCOLOR="Amulet of Yendor named.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ valuable_item }}&inverse
 
-MENUCOLOR="wand (of|called) cancellation"=cyan
-MENUCOLOR="bag (of|called) tricks"=cyan
+MENUCOLOR="wand (of|called) cancellation"={{ bag_kaboom }}
+MENUCOLOR="bag (of|called) tricks"={{ bag_kaboom }}
+MENUCOLOR="bag (of|called) holding"={{ bag_kaboom }}
 
 ## Branches
-MENUCOLOR="The Dungeons of Doom:"=bright blue&reverse
-MENUCOLOR="The Gnomish Mines:"=bright blue&reverse
-MENUCOLOR="Sokoban:"=bright blue&reverse
-MENUCOLOR="The Quest:"=bright blue&reverse
-MENUCOLOR="Fort Ludios:"=bright blue&reverse
-MENUCOLOR="Gehennom:"=bright blue&reverse
-MENUCOLOR="Vlad.s Tower:"=bright blue&reverse
-MENUCOLOR="The Elemental Planes:"=bright blue&reverse
-MENUCOLOR="The Tutorial:"=bright blue&reverse
-MENUCOLOR="Portal to The Quest"=bright blue&underline
-MENUCOLOR="Portal to Fort Ludios"=bright blue&underline
+{% set branch_header = "white&inverse" %}
+{% set branch_transition = "yellow" %}
+
+MENUCOLOR="The Tutorial:"={{ branch_header }}
+MENUCOLOR="The Dungeons of Doom:"={{ branch_header }}
+MENUCOLOR="The Gnomish Mines:"={{ branch_header }}
+MENUCOLOR="Stairs down to The Gnomish Mines"={{ branch_transition }}
+MENUCOLOR="Sokoban:"={{ branch_header }}
+MENUCOLOR="Stairs up to Sokoban"={{ branch_transition }}
+MENUCOLOR="The Quest:"={{ branch_header }}
+MENUCOLOR="Portal to The Quest"={{ branch_transition }}
+MENUCOLOR="Fort Ludios:"={{ branch_header }}
+MENUCOLOR="Portal to Fort Ludios"={{ branch_transition }}
+MENUCOLOR="Gehennom:"={{ branch_header }}
+MENUCOLOR="Vlad.s Tower:"={{ branch_header }}
+MENUCOLOR="Stairs up to Vlad.s Tower"={{ branch_transition }}
+MENUCOLOR="The Elemental Planes:"={{ branch_header }}
 
 ## |TNNT|
-MENUCOLOR="DevTeam Office:"=bright blue&reverse
-MENUCOLOR="Deathmatch Arena:"=bright blue&reverse
-MENUCOLOR="robotfindskitten:"=bright blue&reverse
+MENUCOLOR="robotfindskitten:"={{ branch_header }}
+MENUCOLOR="Portal to robotfindskitten"={{ branch_transition }}
+MENUCOLOR="DevTeam Office:"={{ branch_header }}
+MENUCOLOR="Stairs up to DevTeam Office"={{ branch_transition }}
+MENUCOLOR="Deathmatch Arena:"={{ branch_header }}
+MENUCOLOR="Portal to Deathmatch Arena"={{ branch_transition }}
 
 ## Spells
+MENUCOLOR=" 0%.*%"=green
 MENUCOLOR="100%.*%"=red
 MENUCOLOR="%.*\(gone\)"=orange
 

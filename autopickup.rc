@@ -1,0 +1,3 @@
+OPTIONS=autopickup,pickup_types:$
+autopickup_exception=">.*iron chain.*"
+autopickup_exception=">.*heavy iron ball.*"

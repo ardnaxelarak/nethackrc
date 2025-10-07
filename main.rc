@@ -24,11 +24,9 @@ AUTOCOMPLETE=twoweapon
 OPTIONS=dogname:Athena
 OPTIONS=catname:Moldorm
 OPTIONS=horsename:Horse
-OPTIONS=fruitname:word
+OPTIONS=fruit:word
 
-OPTIONS=autopickup,pickup_types:$
-autopickup_exception=">.*iron chain.*"
-autopickup_exception=">.*heavy iron ball.*"
+{% include "autopickup.rc" %}
 
 OPTIONS=scores:10 top/2 around/own
 

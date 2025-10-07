@@ -3,7 +3,7 @@
   just --list
 
 [group("show")]
-@show_37 *FLAGS:
+@show_v37 *FLAGS:
   uv run upload.py hdf-37.rc {{FLAGS}}
 
 [group("show")]
