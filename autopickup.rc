@@ -1,3 +1,4 @@
 OPTIONS=autopickup,pickup_types:$
+OPTIONS=pickup_burden=B
 autopickup_exception=">.*iron chain.*"
 autopickup_exception=">.*heavy iron ball.*"

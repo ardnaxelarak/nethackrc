@@ -1,9 +1,11 @@
-{% include "main.rc" %}
+{% extends "main.rc" %}
 
+{% block symbols %}
 {% include "basic_symbols.rc" %}
+{% endblock symbols %}
 
+{% block options %}
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs
 OPTIONS=paranoid_confirmation:pray trap A Remove
 OPTIONS=realtime:p,realtime_format:f
-
-{% include "pergame.rc" %}
+{% endblock options %}

@@ -1,6 +1,5 @@
 OPTIONS=menucolors,menu_objsyms
 
-### Item Status (BUC/worn)
 {% set unknown_buc = "white" %}
 {% set cursed = "red" %}
 {% set uncursed = "gray" %}
@@ -8,16 +7,14 @@ OPTIONS=menucolors,menu_objsyms
 {% set danger_item = "red" %}
 {% set valuable_item = "yellow" %}
 {% set bag_kaboom = "cyan" %}
-
+### Item Status (BUC/worn)
 MENUCOLOR=""={{ unknown_buc }}
 MENUCOLOR="gold pieces?"={{ valuable_item }}
 
 MENUCOLOR="[Bb]lessed"={{ blessed }}
 MENUCOLOR="[Hh]oly"={{ blessed }}
-
 MENUCOLOR="[Cc]ursed"={{ cursed }}
 MENUCOLOR="[Uu]nholy"={{ cursed }}
-
 MENUCOLOR="[Uu]ncursed"={{ uncursed }}
 
 MENUCOLOR=".*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ unknown_buc }}&inverse
@@ -68,14 +65,13 @@ MENUCOLOR="wand (of|called) cancellation"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) tricks"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) holding"={{ bag_kaboom }}
 
-## Overview
+### Overview
 MENUCOLOR="^\s*Level.*rust trap"=bright blue
 MENUCOLOR="^\s*Level.*You are here"=green
 
-## Branches
 {% set branch_header = "white&inverse" %}
 {% set branch_transition = "yellow" %}
-
+## Branches
 MENUCOLOR="The Tutorial:"={{ branch_header }}
 MENUCOLOR="The Dungeons of Doom:"={{ branch_header }}
 MENUCOLOR="The Gnomish Mines:"={{ branch_header }}

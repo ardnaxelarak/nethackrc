@@ -1,5 +1,4 @@
-OPTIONS=windowcolors:status white/#000000 message white/#000000 text white/#000000 menu white/#000000
-OPTIONS=vary_msgcount:4
+OPTIONS=statuslines:3
 
 # Status hilites
 OPTIONS=statushilites

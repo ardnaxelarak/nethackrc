@@ -1,5 +1,4 @@
 MSGTYPE=hide "Unknown command '.*'."
-
 MSGTYPE=hide "You swap places with .*"
 
 MSGTYPE=hide "attack passes harmlessly through the shade"
@@ -80,12 +79,9 @@ MSGTYPE=stop "Amulet of Yendor named"
 MSGTYPE=stop "You don't have anything to eat."
 MSGTYPE=stop "You cannot eat that"
 MSGTYPE=stop "You don't have that object"
-
 MSGTYPE=stop "won't move|still eating"
 MSGTYPE=stop "Closed for inventory"
-
 MSGTYPE=stop "You wrest .*"
-
 MSGTYPE=stop "You feel a strange vibration"
 
 ## Gremlin stealing your intrinsic at night

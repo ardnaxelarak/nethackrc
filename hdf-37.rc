@@ -1,14 +1,18 @@
-{% include "main.rc" %}
+{% extends "main.rc" %}
 
-{% include "unicode_symbols.rc" %}
+{% block symbols %}
+{% include "unicode_symbols.rc" +%}
 
 {% include "color_glyphs.rc" %}
+{% endblock symbols %}
 
+{% block options %}
 OPTIONS=!tutorial,!safe_wait,!tips
 OPTIONS=showdamage
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs
 OPTIONS=paranoid_confirmation:pray Remove trap swim
+{% endblock options %}
 
+{% block bindings %}
 BIND=O:optionsfull
-
-{% include "pergame.rc" %}
+{% endblock bindings %}
