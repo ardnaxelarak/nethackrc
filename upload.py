@@ -17,22 +17,35 @@ def upload(rcfile, variant):
     s = requests.Session()
     base_url = f"https://www.hardfought.org/nh/{variant}"
 
-    s.post(f"{base_url}/login.php", {
+    login = s.post(f"{base_url}/login.php", {
         "username": os.getenv("HDF_USERNAME"),
         "password": os.getenv("HDF_PASSWORD"),
         "submit": "Login",
     })
 
+    error = pq(login.content)('.error').text()
+    if (len(error) > 0):
+        print(f"[{variant}] Error logging in: {error}")
+        return False
+
     get_page = s.get(f"{base_url}/rcedit.php")
     csrf_token = pq(get_page.content)('input[name="csrf_token"]').attr("value")
 
-    s.post(f"{base_url}/rcedit.php", {
+    if (len(csrf_token) == 0):
+        print(f"[{variant}] Could not obtain csrf token")
+        return False
+
+    post =s.post(f"{base_url}/rcedit.php", {
         "csrf_token": csrf_token,
         "rctext": rcfile,
         "submit": "Save+RC+File",
     })
+    error = pq(post.content)('.error').text()
+    if (len(error) > 0):
+        print(f"[{variant}] Error updating RC file: {error}")
+        return False
 
-    print(f"Uploaded variant {variant}")
+    return True
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -48,6 +61,7 @@ if __name__ == "__main__":
     rcfile = render(args.template, vars(args))
 
     if args.variant:
-        upload(rcfile, args.variant)
+        if (upload(rcfile, args.variant)):
+            print(f"Uploaded template {args.template} to variant {args.variant}")
     else:
         print(rcfile)
