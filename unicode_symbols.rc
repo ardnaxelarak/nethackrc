@@ -1,13 +1,13 @@
-SYMBOLS=S_magic_portal:U+20AA
-SYMBOLS=S_rust_trap:U+2020
-SYMBOLS=S_ghost:U+0262
-SYMBOLS=S_throne:U+1D8B
-SYMBOLS=S_altar:U+03C0
-SYMBOLS=S_fountain:U+03D4
-SYMBOLS=S_water:U+2248
-SYMBOLS=S_pool:U+2248
-SYMBOLS=S_lava:U+2248
-SYMBOLS=S_sink:U+0534
+SYMBOLS=S_magic_portal:U+20AA {#- ₪ +#}
+SYMBOLS=S_rust_trap:U+2020    {#- † +#}
+SYMBOLS=S_ghost:U+0262        {#- ɢ +#}
+SYMBOLS=S_throne:U+1D8B       {#- ᶋ +#}
+SYMBOLS=S_altar:U+03C0        {#- π +#}
+SYMBOLS=S_fountain:U+03D4     {#- ϔ +#}
+SYMBOLS=S_water:U+2248        {#- ≈ +#}
+SYMBOLS=S_pool:U+2248         {#- ≈ +#}
+SYMBOLS=S_lava:U+2248         {#- ≈ +#}
+SYMBOLS=S_sink:U+0534         {#- Դ +#}
 
 SYMBOLS=S_sw_ml:U+007C
 SYMBOLS=S_sw_mr:U+007C
