@@ -50,7 +50,7 @@ def upload(rcfile, variant):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("template")
-    parser.add_argument("-v", "--variant")
+    parser.add_argument("-v", "--variant", help="If specified, the variant to upload the rendered template to on hardfought.org")
     parser.add_argument("--nudist", "-n", action="store_true")
     parser.add_argument("--pauper", "-p", action="store_true")
     parser.add_argument("--nobones", action="store_true")
