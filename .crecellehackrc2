@@ -1,0 +1,346 @@
+# junethack karafruit
+
+OPTIONS=menucolors,menu_objsyms
+
+### Item Status (BUC/worn)
+MENUCOLOR=""=gray
+MENUCOLOR="gold pieces?"=yellow
+
+MENUCOLOR="[Bb]lessed"=green
+MENUCOLOR="[Hh]oly"=green
+MENUCOLOR="[Cc]ursed"=red
+MENUCOLOR="[Uu]nholy"=red
+MENUCOLOR="[Uu]ncursed"=white
+
+MENUCOLOR=".*(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)"=gray&inverse
+MENUCOLOR="[Cc]ursed.*(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)"=red&inverse
+MENUCOLOR="[Uu]ncursed.*(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)"=white&inverse
+MENUCOLOR="[Bb]lessed.*(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)"=green&inverse
+
+### Items
+## Gray Stones
+MENUCOLOR="luckstone|called luck"=bright blue
+MENUCOLOR="touchstone|called touch"=bright blue
+MENUCOLOR=" [Cc]ursed luckstone| [Cc]ursed.*called luck"=red
+MENUCOLOR="loadstone|called load"=red
+MENUCOLOR="gray stone"=red
+
+MENUCOLOR="chameleon corpse"=red
+MENUCOLOR="doppelganger corpse"=red
+MENUCOLOR="were.* corpse"=red
+
+## Gemstones
+MENUCOLOR="dilithium crystal"=yellow
+MENUCOLOR="diamonds?(\s+\{\d+\})?$"=yellow
+MENUCOLOR="rub(y|ies)(\s+\{\d+\})?$"=yellow
+MENUCOLOR="jacinth stone"=yellow
+MENUCOLOR="sapphires?(\s+\{\d+\})?$"=yellow
+MENUCOLOR="black opal"=yellow
+MENUCOLOR="emeralds?(\s+\{\d+\})?$"=yellow
+MENUCOLOR="turquoise stone"=yellow
+MENUCOLOR="citrine"=yellow
+MENUCOLOR="aquamarine"=yellow
+MENUCOLOR="amber stone"=yellow
+MENUCOLOR="topaz stone"=yellow
+MENUCOLOR="jet stone"=yellow
+MENUCOLOR="opals?(\s+\{\d+\})?$"=yellow
+MENUCOLOR="chrysoberyl"=yellow
+MENUCOLOR="garnet stone"=yellow
+MENUCOLOR="amethyst"=yellow
+MENUCOLOR="jasper stone"=yellow
+MENUCOLOR="fluorite"=yellow
+MENUCOLOR="jade stone"=yellow
+MENUCOLOR="obsidian stone"=yellow
+MENUCOLOR="agate stone"=yellow
+
+MENUCOLOR="Amulet of Yendor named"=yellow
+MENUCOLOR="Amulet of Yendor named.*(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)"=yellow&inverse
+
+MENUCOLOR="wand (of|called) cancellation"=magenta
+MENUCOLOR="bag (of|called) tricks"=magenta
+MENUCOLOR="bag (of|called) holding"=magenta
+
+### Overview
+MENUCOLOR="^\s*Level.*rust trap"=bright blue
+MENUCOLOR="^\s*Level.*You are here"=green
+
+## Branches
+MENUCOLOR="The Tutorial:"=white&inverse
+MENUCOLOR="The Dungeons of Doom:"=white&inverse
+MENUCOLOR="The Gnomish Mines:"=white&inverse
+MENUCOLOR="Stairs down to The Gnomish Mines"=yellow
+MENUCOLOR="Sokoban:"=white&inverse
+MENUCOLOR="Stairs up to Sokoban"=yellow
+MENUCOLOR="The Quest:"=white&inverse
+MENUCOLOR="Portal to The Quest"=yellow
+MENUCOLOR="Fort Ludios:"=white&inverse
+MENUCOLOR="Portal to Fort Ludios"=yellow
+MENUCOLOR="Gehennom:"=white&inverse
+MENUCOLOR="Vlad.s Tower:"=white&inverse
+MENUCOLOR="Stairs up to Vlad.s Tower"=yellow
+MENUCOLOR="The Elemental Planes:"=white&inverse
+
+## |TNNT|
+MENUCOLOR="robotfindskitten:"=white&inverse
+MENUCOLOR="Portal to robotfindskitten"=yellow
+MENUCOLOR="DevTeam Office:"=white&inverse
+MENUCOLOR="Stairs up to DevTeam Office"=yellow
+MENUCOLOR="Deathmatch Arena:"=white&inverse
+MENUCOLOR="Portal to Deathmatch Arena"=yellow
+
+## Spells
+MENUCOLOR=" 0%.*%"=green
+MENUCOLOR="100%.*%"=red
+MENUCOLOR="%.*\(gone\)"=orange
+
+MENUCOLOR="implicit_uncursed"=gray
+
+OPTIONS=statuslines:3
+
+# Status hilites
+OPTIONS=statushilites
+
+## HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/gray&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+## Pw
+OPTIONS=hilite_status:power/100%/gray&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+OPTIONS=hilite_status:condition/stone/red&inverse
+OPTIONS=hilite_status:condition/strngl/red&inverse
+
+# gold
+OPTIONS=hilite_status:gold/up/yellow/down/brown
+
+# St, Dx, Co, In, Wi, Ch
+OPTIONS=hilite_status:characteristics/up/green/down/red
+
+# AC
+OPTIONS=hilite_status:armor-class/down/green/up/red
+
+# XP
+OPTIONS=hilite_status:experience/up/green/down/red
+OPTIONS=hilite_status:experience-level/up/green/down/red
+
+MSGTYPE=hide "Unknown command '.*'."
+MSGTYPE=hide "You swap places with .*"
+
+MSGTYPE=hide "attack passes harmlessly through the shade"
+# MSGTYPE=hide "(It|The .*|.*'s ghost) (misses|touches|bites|hits) (it|the .*|.*'s ghost)"
+MSGTYPE=hide "The fire doesn't seem to burn (it|the .*|.*'s ghost)"
+MSGTYPE=hide "(It|The .*|.*'s ghost) is mildly warmed"
+MSGTYPE=hide "(It|The .*|.*'s ghost) is uninjured"
+MSGTYPE=hide "\(I hope you don't mind\.\)"
+MSGTYPE=hide "Most likely all your gold was stolen from this"
+MSGTYPE=hide "is not affected by oxidation"
+
+MSGTYPE=norep "A mysterious force prevents the .* from teleporting"
+
+MSGTYPE=show "magic missile (hits|misses)"
+MSGTYPE=show "spell (hits|misses)"
+MSGTYPE=show "wand (hits|misses)"
+MSGTYPE=show "dagger (hits|misses)"
+MSGTYPE=show "dart (hits|misses)"
+MSGTYPE=show "ray (hits|misses)"
+MSGTYPE=show "death ray"
+MSGTYPE=show "water flow"
+
+## Danger
+MSGTYPE=stop "You are slowing down"
+MSGTYPE=stop "Your limbs are .*"
+MSGTYPE=stop ".* swings itself around you.*"
+MSGTYPE=stop "You find it hard to breathe"
+MSGTYPE=stop "You are turning a little .*"
+MSGTYPE=stop "You feel feverish"
+MSGTYPE=stop "steals? |stole"
+MSGTYPE=stop "The Wizard of Yendor steals .*"
+MSGTYPE=stop "flicks a bullwhip towards your"
+MSGTYPE=stop "wraps around the"
+MSGTYPE=stop "yanks the"
+MSGTYPE=stop "hand spasms"
+MSGTYPE=stop "disintegration"
+MSGTYPE=stop "wields .*Vorpal Blade"
+MSGTYPE=stop "swings .*Vorpal Blade"
+MSGTYPE=stop "zaps .* with wand of teleportation"
+MSGTYPE=stop "You feel a malgnant aura surround you."
+MSGTYPE=stop "(thoroughly|utterly|totally) digest"
+MSGTYPE=stop "(feel sad|have a (peculiarly)? (sad|melancholy) feeling) for a moment"
+MSGTYPE=stop ".* starves"
+MSGTYPE=stop "Run away! Run away!"
+MSGTYPE=stop "Watch out! Bad things can happen on Friday the 13th."
+
+## Draining
+MSGTYPE=stop "Goodbye level .*."        #  Default
+MSGTYPE=stop "Fare thee well level .*." #  Knight
+MSGTYPE=stop "Sayonara level .*."       #  Samurai
+MSGTYPE=stop "Aloha level .*."          #  Tourist
+MSGTYPE=stop "Farvel level .*."         #  Valkyrie
+
+## Good Things
+MSGTYPE=stop "You feel a strange mental acuity"
+MSGTYPE=stop "You feel (especially)? healthy"
+MSGTYPE=stop "You feel hardy"
+MSGTYPE=stop "You feel wide awake"
+MSGTYPE=stop "You feel a momentary chill"
+MSGTYPE=stop "You feel full of hot air"
+MSGTYPE=stop "You feel very firm"
+MSGTYPE=stop "Your health currently feels amplified"
+MSGTYPE=stop "Magic spreads through your body as you digest"
+MSGTYPE=stop "You have a feeling of reconciliation"
+MSGTYPE=stop "You feel more confident"
+MSGTYPE=stop "grows up"
+
+## Vault
+MSGTYPE=stop "You (dream that you )?hear the footsteps of a guard on patrol"
+MSGTYPE=stop "You (dream that you )?hear someone counting"
+
+## Excalibur
+MSGTYPE=stop "From the murky depths, a hand reaches up to bless the sword"
+
+## Amulet of Yendor
+MSGTYPE=stop "Amulet of Yendor named"
+
+MSGTYPE=stop "You don't have anything to eat."
+MSGTYPE=stop "You cannot eat that"
+MSGTYPE=stop "You don't have that object"
+MSGTYPE=stop "won't move|still eating"
+MSGTYPE=stop "Closed for inventory"
+MSGTYPE=stop "You wrest .*"
+MSGTYPE=stop "You feel a strange vibration"
+
+## Gremlin stealing your intrinsic at night
+MSGTYPE=stop "The gremlin chuckles."
+MSGTYPE=stop "You hear laughter."
+MSGTYPE=stop "Some writing vanishes from.*head!"
+MSGTYPE=stop "You feel warmer."
+MSGTYPE=stop "You feel less jumpy."
+MSGTYPE=stop "You feel a little sick!"
+MSGTYPE=stop "Your senses fail!"
+MSGTYPE=stop "You feel cooler."
+MSGTYPE=stop "You feel paranoid."
+MSGTYPE=stop "You thought you saw something!"
+MSGTYPE=stop "You tawt you taw a puttie tat!"
+MSGTYPE=stop "You feel slower."
+MSGTYPE=stop "You feel clumsy."
+MSGTYPE=stop "You feel vulnerable."
+MSGTYPE=stop "You feel less attractive."
+
+OPTIONS=dogname:Athena
+OPTIONS=catname:Moldorm
+OPTIONS=horsename:Horse
+OPTIONS=fruit:word
+
+OPTIONS=autopickup,pickup_types:$
+OPTIONS=pickup_burden=B
+autopickup_exception=">.*iron chain.*"
+autopickup_exception=">.*heavy iron ball.*"
+
+OPTIONS=windowtype:curses
+OPTIONS=!perm_invent
+OPTIONS=windowborders:0
+
+OPTIONS=!force_invmenu
+OPTIONS=map_mode:tiles,scroll_margin:10
+OPTIONS=hilite_pet,hilite_pile,!toptenwin
+OPTIONS=time,showexp,number_pad:2,lit_corridor
+OPTIONS=msg_window:reversed,sortloot:full
+OPTIONS=autoquiver
+# OPTIONS=invweight,showdmg,showweight
+OPTIONS=!cmdassist
+OPTIONS=travel
+OPTIONS=disclose:yi ya nv ng yc no
+OPTIONS=altmeta
+OPTIONS=autodig
+OPTIONS=runmode:teleport
+OPTIONS=quick_farsight
+OPTIONS=whatis_coord:c
+OPTIONS=!implicit_uncursed
+OPTIONS=orientation:gay
+OPTIONS=!tutorial,!safe_wait,!tips
+OPTIONS=timed_delay
+OPTIONS=showdamage
+OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
+OPTIONS=paranoid_confirmation:pray Remove A trap swim
+
+AUTOCOMPLETE=twoweapon
+
+BIND=M-m:terrain
+BIND=C:conduct
+BIND=!:annotate
+BIND=%:ride
+BIND=O:optionsfull
+
+OPTIONS=symset:Enhanced1,roguesymset:plain
+OPTIONS=boulder:0
+SYMBOLS=S_magic_portal:U+20AA
+SYMBOLS=S_rust_trap:U+2020
+SYMBOLS=S_ghost:U+0262
+SYMBOLS=S_throne:U+1D8B
+SYMBOLS=S_altar:U+03C0
+SYMBOLS=S_fountain:U+03D4
+SYMBOLS=S_water:U+2248
+SYMBOLS=S_pool:U+2248
+SYMBOLS=S_lava:U+2248
+SYMBOLS=S_sink:U+0534
+
+SYMBOLS=S_sw_ml:U+007C
+SYMBOLS=S_sw_mr:U+007C
+SYMBOLS=S_sw_tc:U+002D
+SYMBOLS=S_sw_bc:U+002D
+SYMBOLS=S_explode4:U+007C
+SYMBOLS=S_explode6:U+007C
+SYMBOLS=S_explode2:U+002D
+SYMBOLS=S_explode8:U+002D
+
+OPTIONS=glyph:G_vwall_mines/U+2502/brown
+OPTIONS=glyph:G_hwall_mines/U+2500/brown
+OPTIONS=glyph:G_tlcorn_mines/U+250c/brown
+OPTIONS=glyph:G_trcorn_mines/U+2510/brown
+OPTIONS=glyph:G_blcorn_mines/U+2514/brown
+OPTIONS=glyph:G_brcorn_mines/U+2518/brown
+OPTIONS=glyph:G_crwall_mines/U+253C/brown
+OPTIONS=glyph:G_tuwall_mines/U+2534/brown
+OPTIONS=glyph:G_tdwall_mines/U+252C/brown
+OPTIONS=glyph:G_tlwall_mines/U+2524/brown
+OPTIONS=glyph:G_trwall_mines/U+251C/brown
+OPTIONS=glyph:G_vwall_knox/U+2502/yellow
+OPTIONS=glyph:G_hwall_knox/U+2500/yellow
+OPTIONS=glyph:G_tlcorn_knox/U+250c/yellow
+OPTIONS=glyph:G_trcorn_knox/U+2510/yellow
+OPTIONS=glyph:G_blcorn_knox/U+2514/yellow
+OPTIONS=glyph:G_brcorn_knox/U+2518/yellow
+OPTIONS=glyph:G_crwall_knox/U+253C/yellow
+OPTIONS=glyph:G_tuwall_knox/U+2534/yellow
+OPTIONS=glyph:G_tdwall_knox/U+252C/yellow
+OPTIONS=glyph:G_tlwall_knox/U+2524/yellow
+OPTIONS=glyph:G_trwall_knox/U+251C/yellow
+
+# OPTIONS=nobones
+# OPTIONS=nopet
+# OPTIONS=pauper
+# OPTIONS=nudist

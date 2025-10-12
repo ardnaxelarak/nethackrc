@@ -15,8 +15,13 @@ OPTIONS=fruit:word
 
 {% include "autopickup.rc" +%}
 
+{% block curses %}
+OPTIONS=windowtype:curses
+OPTIONS=!perm_invent
+OPTIONS=windowborders:0
+{% endblock curses %}
+
 OPTIONS=!force_invmenu
-OPTIONS=suppress_alert:3.3.1
 OPTIONS=map_mode:tiles,scroll_margin:10
 OPTIONS=hilite_pet,hilite_pile,!toptenwin
 OPTIONS=time,showexp,number_pad:2,lit_corridor
@@ -27,7 +32,7 @@ OPTIONS=!cmdassist
 OPTIONS=travel
 OPTIONS=disclose:yi ya nv ng yc no
 OPTIONS=altmeta
-OPTIONS=!autodig
+OPTIONS=autodig
 OPTIONS=runmode:teleport
 OPTIONS=quick_farsight
 OPTIONS=whatis_coord:c

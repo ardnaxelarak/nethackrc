@@ -7,8 +7,9 @@
 {% endblock symbols %}
 
 {% block options %}
-OPTIONS=suppress_alert:3.3.1
+OPTIONS=orientation:gay
 OPTIONS=!tutorial,!safe_wait,!tips
+OPTIONS=timed_delay
 OPTIONS=showdamage
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
 OPTIONS=paranoid_confirmation:pray Remove A trap swim

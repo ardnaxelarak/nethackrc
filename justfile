@@ -7,6 +7,10 @@
   uv run render.py hdf-37.rc {{FLAGS}}
 
 [group("show")]
+@show_crecelle *FLAGS:
+  uv run render.py hdf-crecelle.rc {{FLAGS}}
+
+[group("show")]
 @show_tnnt *FLAGS:
   uv run render.py hdf-tnnt.rc {{FLAGS}}
 
@@ -18,5 +22,9 @@
 @tnnt *FLAGS:
   uv run render.py hdf-tnnt.rc -v tnnt {{FLAGS}}
 
+[group("show")]
+@crecelle *FLAGS:
+  uv run render.py hdf-crecelle.rc -v crecellehack {{FLAGS}}
+
 [group("upload")]
-all *FLAGS: (v37 FLAGS) (tnnt FLAGS)
+all *FLAGS: (v37 FLAGS) (tnnt FLAGS) (crecelle FLAGS)

@@ -31,7 +31,7 @@ def upload(rcfile, variant):
     get_page = s.get(f"{base_url}/rcedit.php")
     csrf_token = pq(get_page.content)('input[name="csrf_token"]').attr("value")
 
-    if (len(csrf_token) == 0):
+    if (csrf_token == None or len(csrf_token) == 0):
         print(f"[{variant}] Could not obtain csrf token")
         return False
 

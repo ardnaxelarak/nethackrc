@@ -1,12 +1,14 @@
 OPTIONS=menucolors,menu_objsyms
 
-{% set unknown_buc = "white" %}
+{% set unknown_buc = "gray" %}
 {% set cursed = "red" %}
-{% set uncursed = "gray" %}
+{% set uncursed = "white" %}
 {% set blessed = "green" %}
 {% set danger_item = "red" %}
 {% set valuable_item = "yellow" %}
-{% set bag_kaboom = "cyan" %}
+{% set bag_kaboom = "magenta" %}
+{% set equipped = "(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)" %}
+{% set weight_end = "(\s+\{\d+\})?$" %}
 ### Item Status (BUC/worn)
 MENUCOLOR=""={{ unknown_buc }}
 MENUCOLOR="gold pieces?"={{ valuable_item }}
@@ -17,10 +19,10 @@ MENUCOLOR="[Cc]ursed"={{ cursed }}
 MENUCOLOR="[Uu]nholy"={{ cursed }}
 MENUCOLOR="[Uu]ncursed"={{ uncursed }}
 
-MENUCOLOR=".*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ unknown_buc }}&inverse
-MENUCOLOR="[Cc]ursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ cursed }}&inverse
-MENUCOLOR="[Uu]ncursed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ uncursed }}&inverse
-MENUCOLOR="[Bb]lessed.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ blessed }}&inverse
+MENUCOLOR=".*{{ equipped }}"={{ unknown_buc }}&inverse
+MENUCOLOR="[Cc]ursed.*{{ equipped }}"={{ cursed }}&inverse
+MENUCOLOR="[Uu]ncursed.*{{ equipped }}"={{ uncursed }}&inverse
+MENUCOLOR="[Bb]lessed.*{{ equipped }}"={{ blessed }}&inverse
 
 ### Items
 ## Gray Stones
@@ -36,19 +38,19 @@ MENUCOLOR="were.* corpse"={{ danger_item }}
 
 ## Gemstones
 MENUCOLOR="dilithium crystal"={{ valuable_item }}
-MENUCOLOR="diamonds?$"={{ valuable_item }}
-MENUCOLOR="rub(y|ies)$"={{ valuable_item }}
+MENUCOLOR="diamonds?{{ weight_end }}"={{ valuable_item }}
+MENUCOLOR="rub(y|ies){{ weight_end }}"={{ valuable_item }}
 MENUCOLOR="jacinth stone"={{ valuable_item }}
-MENUCOLOR="sapphires?$"={{ valuable_item }}
+MENUCOLOR="sapphires?{{ weight_end }}"={{ valuable_item }}
 MENUCOLOR="black opal"={{ valuable_item }}
-MENUCOLOR="emeralds?$"={{ valuable_item }}
+MENUCOLOR="emeralds?{{ weight_end }}"={{ valuable_item }}
 MENUCOLOR="turquoise stone"={{ valuable_item }}
 MENUCOLOR="citrine"={{ valuable_item }}
 MENUCOLOR="aquamarine"={{ valuable_item }}
 MENUCOLOR="amber stone"={{ valuable_item }}
 MENUCOLOR="topaz stone"={{ valuable_item }}
 MENUCOLOR="jet stone"={{ valuable_item }}
-MENUCOLOR="opals?$"={{ valuable_item }}
+MENUCOLOR="opals?{{ weight_end }}"={{ valuable_item }}
 MENUCOLOR="chrysoberyl"={{ valuable_item }}
 MENUCOLOR="garnet stone"={{ valuable_item }}
 MENUCOLOR="amethyst"={{ valuable_item }}
@@ -59,7 +61,7 @@ MENUCOLOR="obsidian stone"={{ valuable_item }}
 MENUCOLOR="agate stone"={{ valuable_item }}
 
 MENUCOLOR="Amulet of Yendor named"={{ valuable_item }}
-MENUCOLOR="Amulet of Yendor named.*(being worn|\(wielded|weapon in|lit\)|\(on (left|right)|at the ready|in quiver)"={{ valuable_item }}&inverse
+MENUCOLOR="Amulet of Yendor named.*{{ equipped }}"={{ valuable_item }}&inverse
 
 MENUCOLOR="wand (of|called) cancellation"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) tricks"={{ bag_kaboom }}
@@ -100,4 +102,4 @@ MENUCOLOR=" 0%.*%"=green
 MENUCOLOR="100%.*%"=red
 MENUCOLOR="%.*\(gone\)"=orange
 
-MENUCOLOR="implicit_uncursed"=gray
+MENUCOLOR="implicit_uncursed"={{ unknown_buc }}
