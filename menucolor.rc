@@ -8,7 +8,7 @@ OPTIONS=menucolors,menu_objsyms
 {% set valuable_item = "yellow" %}
 {% set bag_kaboom = "magenta" %}
 {% set equipped = "(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)" %}
-{% set weight_end = "(\s+\{\d+\})?$" %}
+{% set weight_end = "(\s+(\{[0-9]+\}|\([0-9]+ aum\)))?$" %}
 ### Item Status (BUC/worn)
 MENUCOLOR=""={{ unknown_buc }}
 MENUCOLOR="gold pieces?"={{ valuable_item }}
