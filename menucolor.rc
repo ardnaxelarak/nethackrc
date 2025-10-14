@@ -1,14 +1,27 @@
+{#- parameters for menucolors.rc #}
+
+{#- colors for various types of items #}
+{%- set unknown_buc = "gray" %}
+{%- set cursed = "red" %}
+{%- set uncursed = "white" %}
+{%- set blessed = "green" %}
+{%- set danger_item = "red" %}
+{%- set valuable_item = "yellow" %}
+{%- set bag_kaboom = "magenta" %}
+
+{#- modifier for equipped items #}
+{%- set equipped_item = "inverse" %}
+
+{#- Regex for matching equipped/lit items #}
+{%- set equipped = "(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)" %}
+
+{#- Regex for matching the end of an item, possibly including a weight marking #}
+{%- set weight_end = "(\s+(\{[0-9]+\}|\([0-9]+ aum\)))?$" %}
+
+{#- end menucolor.rc parameters -#}
+
 OPTIONS=menucolors,menu_objsyms
 
-{% set unknown_buc = "gray" %}
-{% set cursed = "red" %}
-{% set uncursed = "white" %}
-{% set blessed = "green" %}
-{% set danger_item = "red" %}
-{% set valuable_item = "yellow" %}
-{% set bag_kaboom = "magenta" %}
-{% set equipped = "(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)" %}
-{% set weight_end = "(\s+(\{[0-9]+\}|\([0-9]+ aum\)))?$" %}
 ### Item Status (BUC/worn)
 MENUCOLOR=""={{ unknown_buc }}
 MENUCOLOR="gold pieces?"={{ valuable_item }}
@@ -19,10 +32,10 @@ MENUCOLOR="[Cc]ursed"={{ cursed }}
 MENUCOLOR="[Uu]nholy"={{ cursed }}
 MENUCOLOR="[Uu]ncursed"={{ uncursed }}
 
-MENUCOLOR=".*{{ equipped }}"={{ unknown_buc }}&inverse
-MENUCOLOR="[Cc]ursed.*{{ equipped }}"={{ cursed }}&inverse
-MENUCOLOR="[Uu]ncursed.*{{ equipped }}"={{ uncursed }}&inverse
-MENUCOLOR="[Bb]lessed.*{{ equipped }}"={{ blessed }}&inverse
+MENUCOLOR=".*{{ equipped }}"={{ unknown_buc }}&{{ equipped_item }}
+MENUCOLOR="[Cc]ursed.*{{ equipped }}"={{ cursed }}&{{ equipped_item }}
+MENUCOLOR="[Uu]ncursed.*{{ equipped }}"={{ uncursed }}&{{ equipped_item }}
+MENUCOLOR="[Bb]lessed.*{{ equipped }}"={{ blessed }}&{{ equipped_item }}
 
 ### Items
 ## Gray Stones
@@ -61,7 +74,7 @@ MENUCOLOR="obsidian stone"={{ valuable_item }}
 MENUCOLOR="agate stone"={{ valuable_item }}
 
 MENUCOLOR="Amulet of Yendor named"={{ valuable_item }}
-MENUCOLOR="Amulet of Yendor named.*{{ equipped }}"={{ valuable_item }}&inverse
+MENUCOLOR="Amulet of Yendor named.*{{ equipped }}"={{ valuable_item }}&{{ equipped_item }}
 
 MENUCOLOR="wand (of|called) cancellation"={{ bag_kaboom }}
 MENUCOLOR="bag (of|called) tricks"={{ bag_kaboom }}
@@ -77,24 +90,26 @@ MENUCOLOR="^\s*Level.*You are here"=green
 MENUCOLOR="The Tutorial:"={{ branch_header }}
 MENUCOLOR="The Dungeons of Doom:"={{ branch_header }}
 MENUCOLOR="The Gnomish Mines:"={{ branch_header }}
-MENUCOLOR="Stairs down to The Gnomish Mines"={{ branch_transition }}
 MENUCOLOR="Sokoban:"={{ branch_header }}
-MENUCOLOR="Stairs up to Sokoban"={{ branch_transition }}
 MENUCOLOR="The Quest:"={{ branch_header }}
-MENUCOLOR="Portal to The Quest"={{ branch_transition }}
 MENUCOLOR="Fort Ludios:"={{ branch_header }}
-MENUCOLOR="Portal to Fort Ludios"={{ branch_transition }}
 MENUCOLOR="Gehennom:"={{ branch_header }}
 MENUCOLOR="Vlad.s Tower:"={{ branch_header }}
-MENUCOLOR="Stairs up to Vlad.s Tower"={{ branch_transition }}
 MENUCOLOR="The Elemental Planes:"={{ branch_header }}
+
+MENUCOLOR="Stairs down to The Gnomish Mines"={{ branch_transition }}
+MENUCOLOR="Stairs up to Sokoban"={{ branch_transition }}
+MENUCOLOR="Portal to The Quest"={{ branch_transition }}
+MENUCOLOR="Portal to Fort Ludios"={{ branch_transition }}
+MENUCOLOR="Stairs up to Vlad.s Tower"={{ branch_transition }}
 
 ## |TNNT|
 MENUCOLOR="robotfindskitten:"={{ branch_header }}
-MENUCOLOR="Portal to robotfindskitten"={{ branch_transition }}
 MENUCOLOR="DevTeam Office:"={{ branch_header }}
-MENUCOLOR="Stairs up to DevTeam Office"={{ branch_transition }}
 MENUCOLOR="Deathmatch Arena:"={{ branch_header }}
+
+MENUCOLOR="Portal to robotfindskitten"={{ branch_transition }}
+MENUCOLOR="Stairs up to DevTeam Office"={{ branch_transition }}
 MENUCOLOR="Portal to Deathmatch Arena"={{ branch_transition }}
 
 ## Spells
@@ -102,4 +117,5 @@ MENUCOLOR=" 0%.*%"=green
 MENUCOLOR="100%.*%"=red
 MENUCOLOR="%.*\(gone\)"=orange
 
+## Option menu entry contains "uncursed" so will display in wrong color unless we set it back
 MENUCOLOR="implicit_uncursed"={{ unknown_buc }}
