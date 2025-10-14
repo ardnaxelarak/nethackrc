@@ -3,28 +3,32 @@
   just --list
 
 [group("show")]
-@show_v37 *FLAGS:
+@render TEMPLATE *FLAGS:
+  uv run render.py {{TEMPLATE}} {{FLAGS}}
+
+[group("show")]
+@v37 *FLAGS:
   uv run render.py hdf-37.rc {{FLAGS}}
 
 [group("show")]
-@show_crecelle *FLAGS:
+@crecelle *FLAGS:
   uv run render.py hdf-crecelle.rc {{FLAGS}}
 
 [group("show")]
-@show_tnnt *FLAGS:
+@tnnt *FLAGS:
   uv run render.py hdf-tnnt.rc {{FLAGS}}
 
 [group("upload")]
-@v37 *FLAGS:
+@upload_v37 *FLAGS:
   uv run render.py hdf-37.rc -v nethack {{FLAGS}}
 
 [group("upload")]
-@tnnt *FLAGS:
+@upload_tnnt *FLAGS:
   uv run render.py hdf-tnnt.rc -v tnnt {{FLAGS}}
 
 [group("show")]
-@crecelle *FLAGS:
+@upload_crecelle *FLAGS:
   uv run render.py hdf-crecelle.rc -v crecellehack {{FLAGS}}
 
 [group("upload")]
-all *FLAGS: (v37 FLAGS) (tnnt FLAGS) (crecelle FLAGS)
+upload_all *FLAGS: (upload_v37 FLAGS) (upload_tnnt FLAGS) (upload_crecelle FLAGS)
