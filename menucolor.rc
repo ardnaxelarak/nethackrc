@@ -28,7 +28,7 @@ MENUCOLOR="[Bb]lessed.*{{ equipped }}"={{ blessed }}&inverse
 ## Gray Stones
 MENUCOLOR="luckstone|called luck"=bright blue
 MENUCOLOR="touchstone|called touch"=bright blue
-MENUCOLOR=" [Cc]ursed luckstone| [Cc]ursed.*called luck"=red
+MENUCOLOR=" [Cc]ursed luckstone| [Cc]ursed.*called luck"={{ danger_item }}
 MENUCOLOR="loadstone|called load"={{ danger_item }}
 MENUCOLOR="gray stone"={{ danger_item }}
 
