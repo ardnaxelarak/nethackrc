@@ -12,10 +12,10 @@
 {#- modifier for equipped items #}
 {%- set equipped_item = "inverse" %}
 
-{#- Regex for matching equipped/lit items #}
+{#- regex for matching equipped/lit items #}
 {%- set equipped = "(being worn|\(wielded|weapon in|tethered to|lit\)|\(on (left|right)|at the ready|in quiver)" %}
 
-{#- Regex for matching the end of an item, possibly including a weight marking #}
+{#- regex for matching the end of an item, possibly including a weight marking #}
 {%- set weight_end = "(\s+(\{[0-9]+\}|\([0-9]+ aum\)))?$" %}
 
 {#- end menucolor.rc parameters -#}

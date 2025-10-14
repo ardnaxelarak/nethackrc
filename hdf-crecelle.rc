@@ -7,6 +7,7 @@
 {% endblock symbols %}
 
 {% block options %}
+OPTIONS=taunt:gwaa loudly at your foes
 OPTIONS=orientation:gay
 OPTIONS=!tutorial,!safe_wait,!tips
 OPTIONS=timed_delay
@@ -17,4 +18,5 @@ OPTIONS=paranoid_confirmation:pray Remove A trap swim
 
 {% block bindings %}
 BIND=O:optionsfull
+BIND=5:rush
 {% endblock bindings %}
