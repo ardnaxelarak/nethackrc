@@ -1,7 +1,11 @@
 MSGTYPE=hide "Unknown command '.*'."
+MSGTYPE=hide "Unknown direction '.*'"
 MSGTYPE=hide "You swap places with .*"
+MSGTYPE=hide "Ouch! You bump into a door."
 
 MSGTYPE=hide "attack passes harmlessly through the shade"
+
+# Tried to block a bunch monsters fighting each other with conflict, but too many false positives got suppressed as well
 # MSGTYPE=hide "(It|The .*|.*'s ghost) (misses|touches|bites|hits) (it|the .*|.*'s ghost)"
 MSGTYPE=hide "The fire doesn't seem to burn (it|the .*|.*'s ghost)"
 MSGTYPE=hide "(It|The .*|.*'s ghost) is mildly warmed"
@@ -17,6 +21,7 @@ MSGTYPE=show "spell (hits|misses)"
 MSGTYPE=show "wand (hits|misses)"
 MSGTYPE=show "dagger (hits|misses)"
 MSGTYPE=show "dart (hits|misses)"
+MSGTYPE=show "arrow (hits|misses)"
 MSGTYPE=show "ray (hits|misses)"
 MSGTYPE=show "death ray"
 MSGTYPE=show "water flow"

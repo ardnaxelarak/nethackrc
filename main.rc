@@ -17,6 +17,7 @@ OPTIONS=fruit:word
 
 {% include "autopickup.rc" +%}
 
+{# put curses-specific stuff in a block so it can be easily overwritten if desired per-variant #}
 {% block curses %}
 OPTIONS=windowtype:curses
 OPTIONS=!perm_invent
@@ -29,7 +30,6 @@ OPTIONS=hilite_pet,hilite_pile,!toptenwin
 OPTIONS=time,showexp,number_pad:2,lit_corridor
 OPTIONS=msg_window:reversed,sortloot:full
 OPTIONS=autoquiver
-# OPTIONS=invweight,showdmg,showweight
 OPTIONS=!cmdassist
 OPTIONS=travel
 OPTIONS=disclose:yi ya nv ng yc no
@@ -39,6 +39,7 @@ OPTIONS=runmode:teleport
 OPTIONS=quick_farsight
 OPTIONS=whatis_coord:c
 OPTIONS=!implicit_uncursed
+{# block for additional options to keep main set of options together #}
 {% block options %}
 {% endblock options %}
 
@@ -48,6 +49,7 @@ BIND=M-m:terrain
 BIND=C:conduct
 BIND=!:annotate
 BIND=%:ride
+{# block for additional bindings to keep main set of bindings together #}
 {% block bindings %}
 {% endblock bindings %}
 
