@@ -1,5 +1,7 @@
-# junethack karafruit
+{% if jnh_username is defined %}
+# junethack {{ jnh_username }}
 
+{% endif %}
 {% include "menucolor.rc" +%}
 
 {% include "statusbar.rc" +%}

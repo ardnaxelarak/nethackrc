@@ -12,8 +12,6 @@ def render(filename, options={}):
     return template.render(options)
 
 def upload(rcfile, variant):
-    load_dotenv()
-
     s = requests.Session()
     base_url = f"https://www.hardfought.org/nh/{variant}"
 
@@ -48,6 +46,8 @@ def upload(rcfile, variant):
     return True
 
 if __name__ == "__main__":
+    load_dotenv()
+
     parser = argparse.ArgumentParser()
     parser.add_argument("template")
     parser.add_argument("-v", "--variant", help="If specified, the variant to upload the rendered template to on hardfought.org")
@@ -58,7 +58,12 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    rcfile = render(args.template, vars(args))
+    render_params = vars(args).copy()
+    jnh = os.getenv("JNH_USERNAME")
+    if jnh != None and len(jnh) > 0:
+        render_params['jnh_username'] = jnh
+
+    rcfile = render(args.template, render_params)
 
     if args.variant:
         if (upload(rcfile, args.variant)):
