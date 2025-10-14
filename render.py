@@ -8,6 +8,7 @@ import sys
 
 def render(filename, options={}):
     env = Environment(loader=FileSystemLoader("."), trim_blocks=True, lstrip_blocks=True)
+    env.globals['ord'] = ord
     template = env.get_template(filename)
     return template.render(options)
 

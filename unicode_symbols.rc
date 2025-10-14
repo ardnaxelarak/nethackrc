@@ -1,36 +1,40 @@
-SYMBOLS=S_magic_portal:U+20AA         {#- ₪ +#}
-SYMBOLS=S_rust_trap:U+1D3F            {#- ᴿ +#}
-SYMBOLS=S_magic_trap:U+1D39           {#- ᴹ +#}
-SYMBOLS=S_polymorph_trap:U+1D3E       {#- ᴾ +#}
-SYMBOLS=S_teleportation_trap:U+1D40   {#- ᵀ +#}
-SYMBOLS=S_level_teleporter:U+1D38     {#- ᴸ +#}
-SYMBOLS=S_anti_magic_trap:U+1D2C      {#- ᴬ +#}
-SYMBOLS=S_bear_trap:U+1D2F            {#- ᴯ +#}
-SYMBOLS=S_fire_trap:U+1DA0            {#- ᶠ +#}
-SYMBOLS=S_rolling_boulder_trap:U+1DA0 {#- ᵦ +#}
-SYMBOLS=S_hole:U+25CF                 {#- ● +#}
-SYMBOLS=S_trap_door:U+25CC            {#- ◌ +#}
-SYMBOLS=S_pit:U+1D65                  {#- ᵥ +#}
-SYMBOLS=S_spiked_pit:U+1D69           {#- ᵩ +#}
-SYMBOLS=S_squeaky_board:U+208B        {#- ₋ +#}
-SYMBOLS=S_dart_trap:U+208E            {#- ₎ +#}
-SYMBOLS=S_arrow_trap:U+208E           {#- ₎ +#}
-SYMBOLS=S_land_mine:U+208D            {#- ₍ +#}
-SYMBOLS=S_falling_rock_trap:U+1D3D    {#- ᴽ +#}
-SYMBOLS=S_ghost:U+20B2                {#- ₲ +#}
-SYMBOLS=S_throne:U+1D8B               {#- ᶋ +#}
-SYMBOLS=S_altar:U+03C0                {#- π +#}
-SYMBOLS=S_fountain:U+03D4             {#- ϔ +#}
-SYMBOLS=S_water:U+2248                {#- ≈ +#}
-SYMBOLS=S_pool:U+2248                 {#- ≈ +#}
-SYMBOLS=S_lava:U+2248                 {#- ≈ +#}
-SYMBOLS=S_sink:U+0534                 {#- Դ +#}
+{% macro unicode_symbol(symbol, name) -%}
+SYMBOLS={{ name }}:{{ "U+%04X" % ord(symbol) }}
+{%- endmacro %}
 
-SYMBOLS=S_sw_ml:U+007C
-SYMBOLS=S_sw_mr:U+007C
-SYMBOLS=S_sw_tc:U+002D
-SYMBOLS=S_sw_bc:U+002D
-SYMBOLS=S_explode4:U+007C
-SYMBOLS=S_explode6:U+007C
-SYMBOLS=S_explode2:U+002D
-SYMBOLS=S_explode8:U+002D
+{{ unicode_symbol("₪", "S_magic_portal") }}
+{{ unicode_symbol("ᴿ", "S_rust_trap") }}
+{{ unicode_symbol("ᴹ", "S_magic_trap") }}
+{{ unicode_symbol("ᴾ", "S_polymorph_trap") }}
+{{ unicode_symbol("ᵀ", "S_teleportation_trap") }}
+{{ unicode_symbol("ᴸ", "S_level_teleporter") }}
+{{ unicode_symbol("ᴬ", "S_anti_magic_trap") }}
+{{ unicode_symbol("ᴯ", "S_bear_trap") }}
+{{ unicode_symbol("ᶠ", "S_fire_trap") }}
+{{ unicode_symbol("ᵦ", "S_rolling_boulder_trap") }}
+{{ unicode_symbol("●", "S_hole") }}
+{{ unicode_symbol("◌", "S_trap_door") }}
+{{ unicode_symbol("ᵥ", "S_pit") }}
+{{ unicode_symbol("ᵩ", "S_spiked_pit") }}
+{{ unicode_symbol("₋", "S_squeaky_board") }}
+{{ unicode_symbol("₎", "S_dart_trap") }}
+{{ unicode_symbol("₎", "S_arrow_trap") }}
+{{ unicode_symbol("₍", "S_land_mine") }}
+{{ unicode_symbol("ᴽ", "S_falling_rock_trap") }}
+{{ unicode_symbol("₲", "S_ghost") }}
+{{ unicode_symbol("ᶋ", "S_throne") }}
+{{ unicode_symbol("π", "S_altar") }}
+{{ unicode_symbol("ϔ", "S_fountain") }}
+{{ unicode_symbol("≈", "S_water") }}
+{{ unicode_symbol("≈", "S_pool") }}
+{{ unicode_symbol("≈", "S_lava") }}
+{{ unicode_symbol("Դ", "S_sink") }}
+
+{{ unicode_symbol("|", "S_sw_ml") }}
+{{ unicode_symbol("|", "S_sw_mr") }}
+{{ unicode_symbol("-", "S_sw_tc") }}
+{{ unicode_symbol("-", "S_sw_bc") }}
+{{ unicode_symbol("|", "S_explode4") }}
+{{ unicode_symbol("|", "S_explode6") }}
+{{ unicode_symbol("-", "S_explode2") }}
+{{ unicode_symbol("-", "S_explode8") }}
