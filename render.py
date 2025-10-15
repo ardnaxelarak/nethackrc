@@ -16,9 +16,15 @@ def upload(rcfile, variant):
     s = requests.Session()
     base_url = f"https://www.hardfought.org/nh/{variant}"
 
+    hdf_username = os.getenv("HDF_USERNAME")
+    hdf_password = os.getenv("HDF_PASSWORD")
+    if hdf_username is None or hdf_password is None or len(hdf_username) == 0 or len(hdf_password) == 0:
+        print("To upload config to hardfought you must specify HDF_USERNAME and HDF_PASSWORD in .env")
+        return False
+
     login = s.post(f"{base_url}/login.php", {
-        "username": os.getenv("HDF_USERNAME"),
-        "password": os.getenv("HDF_PASSWORD"),
+        "username": hdf_username,
+        "password": hdf_password,
         "submit": "Login",
     })
 
@@ -64,7 +70,7 @@ if __name__ == "__main__":
 
     render_params = vars(args).copy()
     jnh = os.getenv("JNH_USERNAME")
-    if jnh != None and len(jnh) > 0:
+    if jnh is not None and len(jnh) > 0:
         render_params['jnh_username'] = jnh
 
     rcfile = render(args.template, render_params)

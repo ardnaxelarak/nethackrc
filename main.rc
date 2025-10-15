@@ -112,7 +112,7 @@ OPTIONS=runmode:teleport
 
 OPTIONS=quick_farsight
 
-{% if commenst %}
+{% if comments %}
 # whatis_coord: coordinates to display when looking around the map with the whatis or farlook commands
 #     c: compass ('east' or '3s' or '2n,4w')
 #     f: full compass ('east' or '3south' or '2north,4west')
@@ -127,7 +127,8 @@ OPTIONS=whatis_coord:c
 {% endif %}
 OPTIONS=!implicit_uncursed
 
-{% if base37 %}
+{%- if base37 %}
+
 {% if comments %}
 # tutorial: play a tutorial level at the start of the game
 {% endif %}
@@ -153,7 +154,8 @@ OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
 
 {% if comments %}
 # paranoid_confirmation: space-separated list of specific situations where alternate prompting is desired
-#     Confirm:     for any prompts which are set to require 'yes' rather than 'y', also require 'no' to reject instead of accepting any non-yes response as no
+#     Confirm:     for any prompts which are set to require 'yes' rather than 'y',
+#                  also require 'no' to reject instead of accepting any non-yes response as no
 #     quit:        require 'yes' rather than 'y' to confirm quitting or switching into explore mode
 #     die:         require 'yes' rather than 'y' to confirm dying in explore mode
 #     bones:       require 'yes' rather than 'y' to confirm saving bones data on death in debug mode
@@ -172,6 +174,7 @@ OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
 {% endif %}
 OPTIONS=paranoid_confirmation:pray Remove{{ " AutoAll trap swim" if base37 }}
 {# block for additional options to keep main set of options together #}
+
 {% block options %}
 {% endblock options %}
 
