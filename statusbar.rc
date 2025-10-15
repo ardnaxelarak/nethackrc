@@ -35,10 +35,10 @@ OPTIONS=hilite_status:power/<50%/orange&normal
 OPTIONS=hilite_status:power/<33%/red&bold
 
 ## Carry
-OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse
 
 ## Hunger
-OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse
 
 ## Mental
 OPTIONS=hilite_status:condition/hallu/yellow
@@ -62,5 +62,5 @@ OPTIONS=hilite_status:characteristics/up/green/down/red
 OPTIONS=hilite_status:armor-class/down/green/up/red
 
 # XP
-OPTIONS=hilite_status:experience/up/green/down/red
 OPTIONS=hilite_status:experience-level/up/green/down/red
+OPTIONS=hilite_status:experience/up/green/down/red

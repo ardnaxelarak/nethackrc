@@ -126,6 +126,51 @@ OPTIONS=whatis_coord:c
 # implicit_uncursed: omit "uncursed" from inventory lists when it is implied from other aspects of the item description
 {% endif %}
 OPTIONS=!implicit_uncursed
+
+{% if base37 %}
+{% if comments %}
+# tutorial: play a tutorial level at the start of the game
+{% endif %}
+OPTIONS=!tutorial
+
+{% if comments %}
+# safe_wait: prevents you from waiting or searching when next to a hostile monster
+{% endif %}
+OPTIONS=!safe_wait
+
+{% if comments %}
+# tips: show some helpful tips during gameplay
+{% endif %}
+OPTIONS=!tips
+
+{% if comments %}
+# showdamage: when your character takes damage, show a message of the damage taken and amount of hit points remaining
+{% endif %}
+OPTIONS=showdamage
+
+OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
+{% endif %}
+
+{% if comments %}
+# paranoid_confirmation: space-separated list of specific situations where alternate prompting is desired
+#     Confirm:     for any prompts which are set to require 'yes' rather than 'y', also require 'no' to reject instead of accepting any non-yes response as no
+#     quit:        require 'yes' rather than 'y' to confirm quitting or switching into explore mode
+#     die:         require 'yes' rather than 'y' to confirm dying in explore mode
+#     bones:       require 'yes' rather than 'y' to confirm saving bones data on death in debug mode
+#     attack:      require 'yes' rather than 'y' to confirm attacking a peaceful monster
+#     wand-break:  require 'yes' rather than 'y' to confirm breaking a wand with the apply command
+#     eating:      require 'yes' rather than 'y' to confirm whether to continue eating
+#     Were-change: require 'yes' rather than 'y' to confirm changing form due to lycanthropy when hero has polymorph control
+#     pray:        require 'y' to confirm an attempt to pray instead of automatically praying
+{% if base37 %}
+#     trap:        require 'y' to confirm an attempt to move into or onto a known trap
+#     swim:        prevent walking into water or lava
+#     AutoAll:     require confirmation when the 'A' choice is selected in object class filtering menus
+{% endif %}
+#     Remove:      require selection from inventory for 'R' and 'T' commands even when just wearing one applicable item
+#     all:         turn on all of the above
+{% endif %}
+OPTIONS=paranoid_confirmation:pray Remove{{ " AutoAll trap swim" if base37 }}
 {# block for additional options to keep main set of options together #}
 {% block options %}
 {% endblock options %}
@@ -136,6 +181,9 @@ BIND=M-m:terrain
 BIND=C:conduct
 BIND=!:annotate
 BIND=%:ride
+{% if base37 %}
+BIND=O:optionsfull
+{% endif %}
 {# block for additional bindings to keep set of bindings together #}
 {% block bindings %}
 {% endblock bindings %}

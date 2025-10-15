@@ -1,4 +1,5 @@
 {% extends "main.rc" %}
+{% set base37 = true %}
 
 {% block symbols %}
 {% include "unicode_symbols.rc" +%}
@@ -9,14 +10,9 @@
 {% block options %}
 OPTIONS=taunt:gwaa loudly at your foes
 OPTIONS=orientation:gay
-OPTIONS=!tutorial,!safe_wait,!tips
 OPTIONS=timed_delay
-OPTIONS=showdamage
-OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
-OPTIONS=paranoid_confirmation:pray Remove A trap swim
 {% endblock options %}
 
 {% block bindings %}
-BIND=O:optionsfull
 BIND=5:rush
 {% endblock bindings %}

@@ -6,7 +6,5 @@
 
 {% block options %}
 OPTIONS=suppress_alert:3.3.1
-OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs
-OPTIONS=paranoid_confirmation:pray trap A Remove
 OPTIONS=realtime:p,realtime_format:f
 {% endblock options %}
