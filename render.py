@@ -51,11 +51,14 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("template")
-    parser.add_argument("-v", "--variant", help="If specified, the variant to upload the rendered template to on hardfought.org")
+    parser.add_argument("--hdf_variant", help="If specified, the variant to upload the rendered template to on hardfought.org")
     parser.add_argument("--nudist", "-n", action="store_true")
     parser.add_argument("--pauper", "-p", action="store_true")
     parser.add_argument("--nobones", action="store_true")
     parser.add_argument("--nopet", action="store_true")
+    parser.add_argument("--hide-comments", action="store_false", dest="comments")
+    parser.add_argument("--curses", action="store_const", const="curses", dest="windowtype")
+    parser.add_argument("--tty", action="store_const", const="tty", dest="windowtype")
 
     args = parser.parse_args()
 
@@ -66,8 +69,8 @@ if __name__ == "__main__":
 
     rcfile = render(args.template, render_params)
 
-    if args.variant:
-        if (upload(rcfile, args.variant)):
-            print(f"Uploaded template {args.template} to variant {args.variant}")
+    if args.hdf_variant:
+        if (upload(rcfile, args.hdf_variant)):
+            print(f"Uploaded template {args.template} to hardfought variant {args.hdf_variant}")
     else:
         print(rcfile)
