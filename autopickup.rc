@@ -1,4 +1,28 @@
-OPTIONS=autopickup,pickup_types:$
-OPTIONS=pickup_burden=B
-autopickup_exception=">.*iron chain.*"
-autopickup_exception=">.*heavy iron ball.*"
+{% if comments %}
+# autopickup: automatically pick up certain things when you move onto them
+{% endif %}
+OPTIONS=autopickup
+
+{% if comments %}
+# pickup_types: object types to be picked up when autopickup is on
+{% endif %}
+OPTIONS=pickup_types:$_
+
+{% if comments %}
+# pickup_burden: prompt for confirmation when picking up items that will push the character's encumbrance past the specified level
+{% endif %}
+OPTIONS=pickup_burden:burdened
+
+{% if comments %}
+# pickup_thrown: if set and autopickup is on, try to pick up things that you threw
+{% endif %}
+OPTIONS=pickup_thrown
+
+{% if comments %}
+# autopickup_exception: allow specifying regex matches for more nuanced autopickup
+#     lines starting with < will pick up matches
+#     lines starting with > will ignore matches
+#     only the latest line matching is processed, and if no line matches then pickup_types is looked at
+{% endif %}
+AUTOPICKUP_EXCEPTION=">.*iron chain.*"
+AUTOPICKUP_EXCEPTION=">.*heavy iron ball.*"

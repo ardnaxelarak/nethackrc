@@ -1,0 +1,4 @@
+{% if comments %}
+# windowtype: window interface to use, such as 'tty' or 'curses' (available options depend on build-time settings)
+{% endif %}
+OPTIONS=windowtype:tty

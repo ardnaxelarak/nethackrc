@@ -2,42 +2,129 @@
 # junethack {{ jnh_username }}
 
 {% endif %}
+
+{%- if windowtype == "curses" %}
+{% include "curses.rc" %}
+{% else %}
+{% include "tty.rc" %}
+{% endif +%}
+
 {% include "menucolor.rc" +%}
 
 {% include "statusbar.rc" +%}
 
 {% include "msgtypes.rc" +%}
 
+{% include "names.rc" %}
+{# block for additional names to keep set of names together #}
 {% block names %}
-OPTIONS=dogname:Athena
-OPTIONS=catname:Moldorm
-OPTIONS=horsename:Horse
-OPTIONS=fruit:word
-{% endblock names %}
+{% endblock names +%}
 
 {% include "autopickup.rc" +%}
 
-{# put curses-specific stuff in a block so it can be easily overwritten if desired per-variant #}
-{% block curses %}
-OPTIONS=windowtype:curses
-OPTIONS=!perm_invent
-OPTIONS=windowborders:0
-{% endblock curses %}
-
+{% if comments %}
+# force_invmenu: always show a menu instead of a text query when selecting inventory items
+{% endif %}
 OPTIONS=!force_invmenu
+
 OPTIONS=map_mode:tiles,scroll_margin:10
-OPTIONS=hilite_pet,hilite_pile,!toptenwin
-OPTIONS=time,showexp,number_pad:2,lit_corridor
-OPTIONS=msg_window:reversed,sortloot:full
+
+{% if comments %}
+# hilite_pet: visually distinguish pets from other animals
+{% endif %}
+OPTIONS=hilite_pet
+
+{% if comments %}
+# hilite_pile: visually distinguish plies of objects from individual objects
+{% endif %}
+OPTIONS=hilite_pile
+
+OPTIONS=!toptenwin
+
+{% if comments %}
+# number_pad: use digit keys instead of letters to move
+#     0: move by letters; "yuhjklbn"
+#     1: move by numbers; digit '5' acts as 'G' movement prefix
+#     2: move by numbers; digit '5' acts as 'g' movement prefix
+#     3: move by numbers using phone key layout (123 above, 789 below)
+#     4: combines 3 with 2 (phone key layout plus MS-DOS compatibility)
+#     -1: move by letters but use 'z' to go northwest and 'y' to zap wands
+{% endif %}
+OPTIONS=number_pad:2
+
+{% if comments %}
+# lit_corridor: distinguish visually between lit and unlit corridors
+{% endif %}
+OPTIONS=lit_corridor
+
+{% if comments %}
+# msg_window: controls how to show messages recalled with ^P
+#     single: show single message at a time
+#     combination: show two messages as single, then as full
+#     full: full window, oldest message first
+#     reversed: full window, newest message first
+{% endif %}
+OPTIONS=msg_window:reversed
+
+{% if comments %}
+# sortloot: controls sorting behavior of item-choosing lists
+#     full: always sort lists by item name
+#     loot: sort lists that don't use inventory letters
+#     none: show all lists without sorting
+{% endif %}
+OPTIONS=sortloot:full
+
+{% if comments %}
+# autoquiver: automatically quiver a suitable weapon when firing if your quiver empties
+{% endif %}
 OPTIONS=autoquiver
+
+{% if comments %}
+# cmdassist: provide additional command assistance when detecting some anticipated mistakes
+{% endif %}
 OPTIONS=!cmdassist
+
+{% if comments %}
+# travel: enables the travel command, bound to _ by default
+{% endif %}
 OPTIONS=travel
+
 OPTIONS=disclose:yi ya nv ng yc no
+
+{% if comments %}
+# altmeta: enables extended command shortcuts using the alt key
+{% endif %}
 OPTIONS=altmeta
+
+{% if comments %}
+# autodig: automatically dig when wielding a digging tool moving into a place that can be dug
+{% endif %}
 OPTIONS=autodig
+
+{% if comments %}
+# runmode: set the screen updating interval for multi-turn actions such as running or traveling
+#     teleport: update the map after movement has finished
+#     run: update the map after every seven or so steps
+#     walk: update the map after every step
+#     crawl: update the map and pause after every step
+{% endif %}
 OPTIONS=runmode:teleport
+
 OPTIONS=quick_farsight
+
+{% if commenst %}
+# whatis_coord: coordinates to display when looking around the map with the whatis or farlook commands
+#     c: compass ('east' or '3s' or '2n,4w')
+#     f: full compass ('east' or '3south' or '2north,4west')
+#     m: map <x,y> (map column x=0 is not used)
+#     s: screen [row,column] (row is offset to match tty usage)
+#     n: none (no coordinates shown)
+{% endif %}
 OPTIONS=whatis_coord:c
+
+{% if comments %}
+# implicit_uncursed: omit "uncursed" from inventory lists when it is implied from other aspects of the item description
+{% endif %}
 OPTIONS=!implicit_uncursed
 {# block for additional options to keep main set of options together #}
 {% block options %}
@@ -49,7 +136,7 @@ BIND=M-m:terrain
 BIND=C:conduct
 BIND=!:annotate
 BIND=%:ride
-{# block for additional bindings to keep main set of bindings together #}
+{# block for additional bindings to keep set of bindings together #}
 {% block bindings %}
 {% endblock bindings %}
 

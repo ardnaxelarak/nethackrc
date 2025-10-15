@@ -1,4 +1,16 @@
-{{ "# " if not nobones }}OPTIONS=nobones
-{{ "# " if not nopet }}OPTIONS=nopet
+{% if comments %}
+# bones: allow loading and saving bones files
+{% endif %}
+{{ "# " if not nobones }}OPTIONS=!bones
+
+{{ "# " if not nopet }}OPTIONS=!pet
+
+{% if comments %}
+# pauper: start character with no items, skills, spells, or discoveries
+{% endif %}
 {{ "# " if not pauper }}OPTIONS=pauper
+
+{% if comments %}
+# nudist: start character with no armor
+{% endif %}
 {{ "# " if not nudist }}OPTIONS=nudist

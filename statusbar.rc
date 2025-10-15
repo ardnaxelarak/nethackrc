@@ -1,5 +1,20 @@
 OPTIONS=statuslines:3
 
+{% if comments %}
+# time: displays elapsed game turns on the status line
+{% endif %}
+OPTIONS=time,showexp
+
+{% if comments %}
+# showexp: displays exact number of experience points next to experience level on status line
+{% endif %}
+OPTIONS=showexp
+
+{% if comments %}
+# showscore: displays approximate accumulated score on status line
+{% endif %}
+OPTIONS=showscore
+
 # Status hilites
 OPTIONS=statushilites
 

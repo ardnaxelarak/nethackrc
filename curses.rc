@@ -1,0 +1,38 @@
+{% if comments %}
+# windowtype: window interface to use, such as 'tty' or 'curses' (available options depend on build-time settings)
+{% endif %}
+OPTIONS=windowtype:curses
+
+{% if comments %}
+# perm_invent: display your current inventory in a permanent window (only applicable in window interfaces that implement it)
+{% endif %}
+OPTIONS=!perm_invent
+
+{% if comments %}
+# perminv_mode: determines what items to show in perm_invent window
+#     none: behave as if perm_invent is false
+#     all: show all inventory except for gold
+#     full: show full inventory including gold
+#     in-use: only show items which are in use (worn, wielded, quivered, lit lamp)
+{% endif %}
+OPTIONS=perminv_mode:none
+
+{% if comments %}
+# align_message: where to place the message window (top, bottom, left, or right)
+{% endif %}
+OPTIONS=align_message:top
+
+{% if comments %}
+# align_status: where to place the status window (top, bottom, left, or right)
+{% endif %}
+OPTIONS=align_status:top
+
+{% if comments %}
+# windowborders: whether to draw boxes around the map, status area, message area, and persistant inventory window
+#     0: off, never show borders
+#     1: on, always show borders
+#     2: auto, on if display is at least (24+2)x(80+2)
+#     3: on, execpt forced off for perm_invent
+#     4: auto, execpt forced off for perm_invent
+{% endif %}
+OPTIONS=windowborders:0

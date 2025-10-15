@@ -1,0 +1,19 @@
+{% if comments %}
+# fruit: set name of user-definable fruit
+{% endif %}
+OPTIONS=fruit:word
+
+{% if comments %}
+# catname: set name of starting cat
+{% endif %}
+OPTIONS=catname:Moldorm
+
+{% if comments %}
+# dogname: set name of starting dog
+{% endif %}
+OPTIONS=dogname:Athena
+
+{% if comments %}
+# horsename: set name of starting horse
+{% endif %}
+OPTIONS=horsename:Horse
