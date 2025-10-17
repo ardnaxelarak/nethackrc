@@ -3,12 +3,18 @@
 {% endif %}
 {{ "# " if not nobones }}OPTIONS=!bones
 
-{{ "# " if not nopet }}OPTIONS=!pet
+{% if comments %}
+# pettype: specify starting pet
+{% endif %}
+{{ "# " if not nopet }}OPTIONS=pettype:none
 
+{% if base37 %}
 {% if comments %}
 # pauper: start character with no items, skills, spells, or discoveries
 {% endif %}
 {{ "# " if not pauper }}OPTIONS=pauper
+
+{% endif -%}
 
 {% if comments %}
 # nudist: start character with no armor

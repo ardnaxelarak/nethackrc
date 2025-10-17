@@ -127,8 +127,7 @@ OPTIONS=whatis_coord:c
 {% endif %}
 OPTIONS=!implicit_uncursed
 
-{%- if base37 %}
-
+{% if base37 %}
 {% if comments %}
 # tutorial: play a tutorial level at the start of the game
 {% endif %}
@@ -150,7 +149,8 @@ OPTIONS=!tips
 OPTIONS=showdamage
 
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
-{% endif %}
+
+{% endif -%}
 
 {% if comments %}
 # paranoid_confirmation: space-separated list of specific situations where alternate prompting is desired
