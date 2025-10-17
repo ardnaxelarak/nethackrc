@@ -4,11 +4,6 @@
 OPTIONS=windowtype:curses
 
 {% if comments %}
-# perm_invent: display your current inventory in a permanent window (only applicable in window interfaces that implement it)
-{% endif %}
-OPTIONS=!perm_invent
-
-{% if comments %}
 # perminv_mode: determines what items to show in perm_invent window
 #     none: behave as if perm_invent is false
 #     all: show all inventory except for gold
@@ -18,6 +13,11 @@ OPTIONS=!perm_invent
 OPTIONS=perminv_mode:none
 
 {% if comments %}
+# perm_invent: display your current inventory in a permanent window (only applicable in window interfaces that implement it)
+{% endif %}
+OPTIONS=!perm_invent
+
+{% if comments %}
 # align_message: where to place the message window (top, bottom, left, or right)
 {% endif %}
 OPTIONS=align_message:top
@@ -25,7 +25,7 @@ OPTIONS=align_message:top
 {% if comments %}
 # align_status: where to place the status window (top, bottom, left, or right)
 {% endif %}
-OPTIONS=align_status:top
+OPTIONS=align_status:bottom
 
 {% if comments %}
 # windowborders: whether to draw boxes around the map, status area, message area, and persistant inventory window

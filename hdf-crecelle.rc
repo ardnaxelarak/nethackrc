@@ -11,6 +11,7 @@
 OPTIONS=taunt:gwaa loudly at your foes
 OPTIONS=orientation:gay
 OPTIONS=timed_delay
+OPTIONS=player_sized_wishes
 {% endblock options %}
 
 {% block bindings %}

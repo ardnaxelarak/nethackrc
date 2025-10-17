@@ -3,7 +3,7 @@ OPTIONS=statuslines:3
 {% if comments %}
 # time: displays elapsed game turns on the status line
 {% endif %}
-OPTIONS=time,showexp
+OPTIONS=time
 
 {% if comments %}
 # showexp: displays exact number of experience points next to experience level on status line
