@@ -1,7 +1,8 @@
 {#- parameters for menucolors.rc #}
 
 {#- colors for various types of items #}
-{%- set unknown_buc = "gray" %}
+{%- set basecolor = "gray" %}
+{%- set unknown_buc = basecolor %}
 {%- set cursed = "red" %}
 {%- set uncursed = "white" %}
 {%- set blessed = "green" %}
@@ -23,7 +24,7 @@
 OPTIONS=menucolors,menu_objsyms
 
 ### Item Status (BUC/worn)
-MENUCOLOR=""={{ unknown_buc }}
+MENUCOLOR=""={{ basecolor }}
 MENUCOLOR="gold pieces?"={{ valuable_item }}
 
 MENUCOLOR="[Bb]lessed"={{ blessed }}
@@ -118,4 +119,8 @@ MENUCOLOR="100%.*%"=red
 MENUCOLOR="%.*\(gone\)"=orange
 
 ## Option menu entry contains "uncursed" so will display in wrong color unless we set it back
-MENUCOLOR="implicit_uncursed"={{ unknown_buc }}
+MENUCOLOR="implicit_uncursed"={{ basecolor }}
+
+## Using a bag of holding could change color because of "bag of holding" match above, so fix "look inside" and "stash" messages
+MENUCOLOR="Look inside "={{ basecolor }}
+MENUCOLOR="stash one item into "={{ basecolor }}

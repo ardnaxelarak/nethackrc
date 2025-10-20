@@ -13,6 +13,7 @@ MSGTYPE=hide "(It|The .*|.*'s ghost) is uninjured"
 MSGTYPE=hide "\(I hope you don't mind\.\)"
 MSGTYPE=hide "Most likely all your gold was stolen from this"
 MSGTYPE=hide "is not affected by oxidation"
+MSGTYPE=hide "(Book of the Dead|papyrus spellbook) glows a strange dark red, but remians intact"
 
 MSGTYPE=norep "A mysterious force prevents the .* from teleporting"
 
