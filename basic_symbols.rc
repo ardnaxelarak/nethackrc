@@ -1,5 +1,12 @@
-SYMBOLS=S_magic_portal:\x38
-SYMBOLS=S_rust_trap:\x38
+SYMBOLS=S_magic_portal:\xE0
+SYMBOLS=S_rust_trap:\xE6
 SYMBOLS=S_water:\x7E
 SYMBOLS=S_pool:\x7E
 SYMBOLS=S_lava:\x7E
+SYMBOLS=S_upladder:\xF9
+SYMBOLS=S_dnladder:\xFA
+SYMBOLS=S_altar:\xFB
+SYMBOLS=S_corr:\x23
+SYMBOLS=S_litcorr:\x23
+SYMBOLS=S_throne:\xFD
+SYMBOLS=S_fountain:\xFD

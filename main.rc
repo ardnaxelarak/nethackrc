@@ -110,8 +110,6 @@ OPTIONS=autodig
 {% endif %}
 OPTIONS=runmode:teleport
 
-OPTIONS=quick_farsight
-
 {% if comments %}
 # whatis_coord: coordinates to display when looking around the map with the whatis or farlook commands
 #     c: compass ('east' or '3s' or '2n,4w')
@@ -147,6 +145,8 @@ OPTIONS=!tips
 # showdamage: when your character takes damage, show a message of the damage taken and amount of hit points remaining
 {% endif %}
 OPTIONS=showdamage
+
+OPTIONS=quick_farsight
 
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
 

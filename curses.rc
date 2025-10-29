@@ -3,6 +3,7 @@
 {% endif %}
 OPTIONS=windowtype:curses
 
+{% if base37 %}
 {% if comments %}
 # perminv_mode: determines what items to show in perm_invent window
 #     none: behave as if perm_invent is false
@@ -11,6 +12,8 @@ OPTIONS=windowtype:curses
 #     in-use: only show items which are in use (worn, wielded, quivered, lit lamp)
 {% endif %}
 OPTIONS=perminv_mode:none
+
+{% endif -%}
 
 {% if comments %}
 # perm_invent: display your current inventory in a permanent window (only applicable in window interfaces that implement it)

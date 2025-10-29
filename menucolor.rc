@@ -25,7 +25,6 @@ OPTIONS=menucolors,menu_objsyms
 
 ### Item Status (BUC/worn)
 MENUCOLOR=""={{ basecolor }}
-MENUCOLOR="gold pieces?"={{ valuable_item }}
 
 MENUCOLOR="[Bb]lessed"={{ blessed }}
 MENUCOLOR="[Hh]oly"={{ blessed }}
@@ -37,6 +36,9 @@ MENUCOLOR=".*{{ equipped }}"={{ unknown_buc }}&{{ equipped_item }}
 MENUCOLOR="[Cc]ursed.*{{ equipped }}"={{ cursed }}&{{ equipped_item }}
 MENUCOLOR="[Uu]ncursed.*{{ equipped }}"={{ uncursed }}&{{ equipped_item }}
 MENUCOLOR="[Bb]lessed.*{{ equipped }}"={{ blessed }}&{{ equipped_item }}
+
+MENUCOLOR="gold pieces?"={{ valuable_item }}
+MENUCOLOR="gold pieces?.*{{ equipped }}"={{ valuable_item }}&{{ equipped_item }}
 
 ### Items
 ## Gray Stones
@@ -114,9 +116,12 @@ MENUCOLOR="Stairs up to DevTeam Office"={{ branch_transition }}
 MENUCOLOR="Portal to Deathmatch Arena"={{ branch_transition }}
 
 ## Spells
-MENUCOLOR=" 0%.*%"=green
-MENUCOLOR="100%.*%"=red
-MENUCOLOR="%.*\(gone\)"=orange
+MENUCOLOR="%.*\(gone\)"=bright blue
+MENUCOLOR="100% .*%"=red
+MENUCOLOR=" [5-9][0-9]% .*%"=orange
+MENUCOLOR=" [2-4][0-9]% .*%"=yellow
+MENUCOLOR=" 1?[0-9]% .*%"=green
+MENUCOLOR=" 0% .*%"=bright green
 
 ## Option menu entry contains "uncursed" so will display in wrong color unless we set it back
 MENUCOLOR="implicit_uncursed"={{ basecolor }}
