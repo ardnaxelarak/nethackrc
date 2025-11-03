@@ -1,3 +1,5 @@
+OPTIONS=symset:Enhanced1
+
 {% macro unicode_symbol(symbol, name) -%}
 SYMBOLS={{ name }}:{{ "U+%04X" % ord(symbol) }}
 {%- endmacro %}

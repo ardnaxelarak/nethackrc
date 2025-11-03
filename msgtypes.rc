@@ -1,7 +1,7 @@
 MSGTYPE=hide "Unknown command '.*'."
 MSGTYPE=hide "Unknown direction '.*'"
 MSGTYPE=hide "You swap places with .*"
-MSGTYPE=hide "Ouch! You bump into a door."
+MSGTYPE=hide "Ouch!  You bump into a door."
 
 MSGTYPE=hide "attack passes harmlessly through the shade"
 
@@ -46,7 +46,7 @@ MSGTYPE=stop "swings .*Vorpal Blade"
 MSGTYPE=stop "zaps .* with wand of teleportation"
 MSGTYPE=stop "You feel a malignant aura surround you."
 MSGTYPE=stop "(thoroughly|utterly|totally) digest"
-MSGTYPE=stop "(feel sad|have a (peculiarly)? (sad|melancholy) feeling) for a moment"
+MSGTYPE=stop "(feel sad|have a( peculiarly)? (sad|melancholy) feeling) for a moment"
 MSGTYPE=stop ".* starves"
 MSGTYPE=stop "Run away! Run away!"
 MSGTYPE=stop "Watch out! Bad things can happen on Friday the 13th."

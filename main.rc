@@ -191,7 +191,7 @@ BIND=O:optionsfull
 {% block bindings %}
 {% endblock bindings %}
 
-OPTIONS=symset:Enhanced1,roguesymset:plain
+OPTIONS=roguesymset:plain
 OPTIONS=boulder:0
 {% block symbols %}
 {% endblock symbols +%}

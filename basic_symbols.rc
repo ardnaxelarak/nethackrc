@@ -1,3 +1,5 @@
+OPTIONS=symset:curses
+
 SYMBOLS=S_magic_portal:\xE0
 SYMBOLS=S_rust_trap:\xE6
 SYMBOLS=S_water:\x7E
@@ -10,3 +12,5 @@ SYMBOLS=S_corr:\x23
 SYMBOLS=S_litcorr:\x23
 SYMBOLS=S_throne:\xFD
 SYMBOLS=S_fountain:\xFD
+SYMBOLS=S_room:\xFE
+SYMBOLS=S_darkroom:\xFE
