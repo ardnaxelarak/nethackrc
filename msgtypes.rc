@@ -92,6 +92,7 @@ MSGTYPE=stop "won't move|still eating"
 MSGTYPE=stop "Closed for inventory"
 MSGTYPE=stop "You wrest .*"
 MSGTYPE=stop "You feel a strange vibration"
+MSGTYPE=stop "eucalyptus leaf glows brown"
 
 ## Gremlin stealing your intrinsic at night
 MSGTYPE=stop "The gremlin chuckles."

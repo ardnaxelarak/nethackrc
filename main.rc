@@ -94,7 +94,7 @@ OPTIONS=disclose:yi ya nv ng yc no
 {% if comments %}
 # altmeta: enables extended command shortcuts using the alt key
 {% endif %}
-OPTIONS=altmeta
+OPTIONS=!altmeta
 
 {% if comments %}
 # autodig: automatically dig when wielding a digging tool moving into a place that can be dug
@@ -149,6 +149,21 @@ OPTIONS=showdamage
 OPTIONS=quick_farsight
 
 OPTIONS=cond_held,cond_ice,cond_lava,cond_woundedlegs,cond_slip
+
+{% if comments %}
+# weaponstatus: show extra status field listing wielded weapon(s)
+{% endif %}
+OPTIONS=weaponstatus
+
+{% if comments %}
+# armorstatus: show extra status field summarizing worn armor
+{% endif %}
+OPTIONS=!armorstatus
+
+{% if comments %}
+# terrainstatus: show extra status field describing current location
+{% endif %}
+OPTIONS=!terrainstatus
 
 {% endif -%}
 

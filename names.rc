@@ -1,7 +1,7 @@
 {% if comments %}
 # fruit: set name of user-definable fruit
 {% endif %}
-OPTIONS=fruit:word
+OPTIONS=fruit:plum
 
 {% if comments %}
 # catname: set name of starting cat
